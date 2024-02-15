@@ -7,8 +7,7 @@ The official guide currently only offers Paparazzi for Ubuntu.
 Run this command:
 
 ```bash
-wget https://raw.githubusercontent.com/Pelochus/bt-crazyflies/main/scripts/paparazzi-debian-install.sh
-&& sudo bash paparazzi-debian-install.sh
+wget https://raw.githubusercontent.com/Pelochus/bt-crazyflies/main/scripts/paparazzi-debian-install.sh && sudo bash paparazzi-debian-install.sh
 ```
 
 ### How do these scripts work
