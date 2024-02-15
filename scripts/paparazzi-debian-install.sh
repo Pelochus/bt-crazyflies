@@ -7,8 +7,8 @@
 sudo apt install -y wget # Just in case
 
 # Get files
-wget rawlink
-wget rawlink
+wget https://raw.githubusercontent.com/Pelochus/bt-crazyflies/main/scripts/paparazzi-center-install.sh
+wget https://raw.githubusercontent.com/Pelochus/bt-crazyflies/main/scripts/paparazzi-gcs-install.sh
 
 # Give them permissions
 sudo chmod 755 ./paparazzi-center-install.sh
