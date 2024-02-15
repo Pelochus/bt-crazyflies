@@ -4,6 +4,12 @@ These collection of scripts are made to install Paparazzi on Debian 12.
 The official guide currently only offers Paparazzi for Ubuntu.
 
 ### Quick Install
+Run this command:
+
+```bash
+wget https://raw.githubusercontent.com/Pelochus/bt-crazyflies/main/scripts/paparazzi-debian-install.sh
+&& sudo bash paparazzi-debian-install.sh
+```
 
 ### How do these scripts work
 The main script ```paparazzi-debian-install.sh``` just calls the other two scripts.
