@@ -1,9 +1,5 @@
 #!/bin/bash
 
-################################
-# PLEASE RUN THIS SCRIPT AS SUDO
-################################
-
 sudo apt install -y wget # Just in case
 
 # Get files

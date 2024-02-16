@@ -1,9 +1,5 @@
 #!/bin/bash
 
-################################
-# PLEASE RUN THIS SCRIPT AS SUDO
-################################
-
 sudo apt update && sudo apt full-upgrade -y
 
 # In order to add the Ubuntu PPA, I followed this guide
@@ -30,7 +26,7 @@ git checkout v6.3 # Currently last stable version
 # Compile latest stable
 make clean && make
 
-# TODO Try to put paparazzi in /usr/bin with a symlink so it can be globally executed
+# TODO: Try to put paparazzi in /usr/bin with a symlink so it can be globally executed
 
 # Run!
 # ./paparazzi
