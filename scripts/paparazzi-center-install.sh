@@ -30,5 +30,7 @@ git checkout v6.3 # Currently last stable version
 # Compile latest stable
 make clean && make
 
+# TODO Try to put paparazzi in /usr/bin with a symlink so it can be globally executed
+
 # Run!
 # ./paparazzi
