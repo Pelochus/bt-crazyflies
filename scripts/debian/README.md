@@ -1,4 +1,4 @@
-## Scripts
+## Debian Scripts
 
 These collection of scripts are made to install Paparazzi on Debian 12.
 The official guide currently only offers Paparazzi for Ubuntu.
@@ -8,7 +8,7 @@ Run this command on the directory you want Paparazzi source to be downloaded.
 Your ```sudo``` password will be asked:
 
 ```bash
-wget https://raw.githubusercontent.com/Pelochus/bt-crazyflies/main/scripts/paparazzi-debian-install.sh && bash paparazzi-debian-install.sh
+wget https://raw.githubusercontent.com/Pelochus/bt-crazyflies/main/scripts/debian/paparazzi-debian-install.sh && bash paparazzi-debian-install.sh
 ```
 
 **NOTE: Do not execute this command as sudo unless you want your /root/.bashrc modified instead of your user.**

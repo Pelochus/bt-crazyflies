@@ -18,9 +18,9 @@ Remember to actually add the link to the PDF later
 3. [PowerPoint](https://github.com/Pelochus/bt-crazyflies/tree/main/docs/PowerPoint)
 
 ### Scripts
-
-1. [Paparazzi Quick Install for Debian 12](https://github.com/Pelochus/bt-crazyflies/tree/main/scripts#Quick-Install)
-
+Useful scripts for installing required packages, sources and dependencies for this Bachelor's Thesis:
+1. [Paparazzi Quick Install for Debian 12](https://github.com/Pelochus/bt-crazyflies/tree/main/scripts/debian#Quick-Install)
+2. [Install dependencies for this Thesis](https://github.com/Pelochus/bt-crazyflies/tree/main/scripts/deps#Quick-Install)
 
 ### Code
 
