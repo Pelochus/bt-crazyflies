@@ -3,7 +3,7 @@
 These collection of scripts are dependencies for the making of this Bachelor's Thesis.
 
 ### Quick Install
-You should already have installed Paparazzi. If on Debian you can follow this [guide]()
+You should already have installed Paparazzi. If on Debian you can follow this [guide](https://github.com/Pelochus/bt-crazyflies/tree/main/scripts/debian#Quick-Install)
 Run this command for installing the dependencies on Debian. You should run this script within the Paparazzi source folder.
 May also work with derivatives like Ubuntu.
 Your ```sudo``` password will be asked:
