@@ -6,3 +6,6 @@ sudo apt install -y dfu-util dfu-programmer gedit
 # Init just required submodules for this BT
 cd $PAPARAZZI_SRC
 git submodule update --init --recursive sw/ext/eigen
+
+# Configurations
+sudo usermod -aG dialout $USER

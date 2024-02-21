@@ -1,6 +1,5 @@
 ## Dependencies Scripts
-
-These collection of scripts are dependencies for the making of this Bachelor's Thesis.
+These collection of scripts are dependencies and configurations for the making of this Bachelor's Thesis.
 
 ### Quick Install
 You should already have installed Paparazzi. If on Debian you can follow this [guide](https://github.com/Pelochus/bt-crazyflies/tree/main/scripts/debian#Quick-Install).
@@ -13,7 +12,7 @@ Your ```sudo``` password will be asked:
 wget https://raw.githubusercontent.com/Pelochus/bt-crazyflies/main/scripts/deps/deps-install.sh && bash deps-install.sh
 ```
 
-### What is installed
+### What is installed/configured
 This script install the following packages:
 - dfu-util
 - dfu-programmer
@@ -27,6 +26,9 @@ It also inits the submodule for Eigen, needed for this Bachelor's Thesis. Not ne
 # If in the Paparazzi source folder
 git submodule update --init --recursive sw/ext/eigen
 ```
+
+For configurations:
+- Adds the current user to the group dialout
 
 ### Useful Links
 - Flashing firmware on Crazyflie: https://wiki.paparazziuav.org/wiki/Crazyflie_2.0
