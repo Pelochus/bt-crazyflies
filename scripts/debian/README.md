@@ -33,7 +33,7 @@ The script works this way:
 #### Paparazzi GCS Install
 This script uses the official AppImage to substitute the broken Ubuntu package for Paparazzi GCS:
 
-- Set the environment variables ```PAPARAZZI_HOME``` and ```PAPARAZZI_GCS``` in ```.bashrc``` to where the source code is downloaded. The AppImage needs this to work
+- Set the environment variables ```PAPARAZZI_HOME``` and ```PAPARAZZI_SRC``` in ```.bashrc``` to where the source code is downloaded. The AppImage needs this to work
 - Download the AppImage with wget and move it as ```/usr/bin/pprzgcs```. Give exec permissions
 
 ### Useful Links
