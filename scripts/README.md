@@ -11,6 +11,15 @@ Your ```sudo``` password will be asked:
 wget https://raw.githubusercontent.com/Pelochus/bt-crazyflies/main/scripts/paparazzi-debian-install.sh && bash paparazzi-debian-install.sh
 ```
 
+**NOTE: Do not execute this command as sudo unless you want your /root/.bashrc modified instead of your user.**
+
+### Extended installation
+Run in the root of the Paparazzi source if you want all libraries (may not be necessary): 
+
+```bash
+git submodule update --init --recursive .
+```
+
 ### How do these scripts work
 The main script ```paparazzi-debian-install.sh``` just calls the other two scripts.
 The reason for doing this is purely academic, it better fits a separated explanation of each script for the final thesis report
