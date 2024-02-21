@@ -8,8 +8,7 @@
 sudo apt install -y dfu-util dfu-programmer gedit
 
 # Same but for python packages
-pipx install cflib --include-deps
-pipx install ivy --include-deps
+pip install cflib --break-system-packages # This flag is necessary for Python 3.11+, but should not be dangerous
 
 # Init just required submodules for this BT
 cd $PAPARAZZI_SRC

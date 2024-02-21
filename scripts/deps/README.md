@@ -17,13 +17,11 @@ This script install the following packages:
 - dfu-util
 - dfu-programmer
 - gedit
-- cflib (pipx)
-- ivy (pipx)
+- cflib (with pip)
 
 DFU packages are needed for flashing the firmware to the Crazyflies.
 gedit is used as default editor for Paparazzi.
-cflib is a library needed for communication with the Crazyflie using the Crazyradio 2.0
-ivy is also necessary for Paparazzi communication
+cflib is a library needed for communication with the Crazyflie using the Crazyradio 2.0. It is forced for Python 3.11+ installations
 
 It also inits the submodule for Eigen, needed for this Bachelor's Thesis. Not needed if already inited all submodules:
 
