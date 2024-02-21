@@ -1,5 +1,9 @@
 #!/bin/bash
 
+#####################
+# Do not run as root!
+#####################
+
 cd paparazzi
 
 # Make Paparazzi GCS AppImage Work

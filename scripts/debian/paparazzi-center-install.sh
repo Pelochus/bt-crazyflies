@@ -1,5 +1,9 @@
 #!/bin/bash
 
+#####################
+# Do not run as root!
+#####################
+
 sudo apt update && sudo apt full-upgrade -y
 
 # In order to add the Ubuntu PPA, I followed this guide

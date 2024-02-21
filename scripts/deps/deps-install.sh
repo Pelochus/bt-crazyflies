@@ -1,7 +1,15 @@
 #!/bin/bash
 
+#####################
+# Do not run as root!
+#####################
+
 # Install needed packages for the BT
 sudo apt install -y dfu-util dfu-programmer gedit
+
+# Same but for python packages
+pipx install cflib --include-deps
+pipx install ivy --include-deps
 
 # Init just required submodules for this BT
 cd $PAPARAZZI_SRC

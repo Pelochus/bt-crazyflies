@@ -1,5 +1,9 @@
 #!/bin/bash
 
+#####################
+# Do not run as root!
+#####################
+
 sudo apt install -y wget # Just in case
 
 # Get files
