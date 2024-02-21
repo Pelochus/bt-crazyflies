@@ -6,7 +6,7 @@ lightweight quadcopters developed by the company Bitcraze,
 through the development of an open-source firmware based on the Paparazzi UAV project 
 and the implementation of an algorithm for coordinated movement between them.
 
-These project uses the Crazyflie 2.1 from Bitcraze with its corresponding accessories.
+This project uses the Crazyflie 2.1 from Bitcraze with its corresponding accessories.
 
 ## Index
 
