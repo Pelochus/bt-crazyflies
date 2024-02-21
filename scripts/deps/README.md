@@ -17,6 +17,9 @@ wget https://raw.githubusercontent.com/Pelochus/bt-crazyflies/main/scripts/deps/
 This script install the following packages:
 - dfu-util
 - dfu-programmer
+- gedit
+
+DFU packages are needed for flashing the firmware to the Crazyflies. gedit is used as default editor for Paparazzi.
 
 It also inits the submodule for Eigen, needed for this Bachelor's Thesis. Not needed if already inited all submodules:
 
