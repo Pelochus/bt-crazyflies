@@ -35,6 +35,7 @@ git submodule update --init --recursive sw/ext/eigen
 For configurations:
 - Adds the current user to the group dialout
 - Configures the Crazyradio 2.0 USB permissions
+- Optional: In Paparazzi Center, click File > Edit settings > Text editor to change the default text editor. For example, I use ```/usr/bin/kate```
 
 ### Useful Links
 - Flashing firmware on Crazyflie: https://wiki.paparazziuav.org/wiki/Crazyflie_2.0
