@@ -10,7 +10,7 @@ May also work with derivatives like Ubuntu.
 Your ```sudo``` password will be asked:
 
 ```bash
-wget https://raw.githubusercontent.com/Pelochus/bt-crazyflies/main/scripts/deps/deps-install.sh && bash paparazzi-debian-install.sh
+wget https://raw.githubusercontent.com/Pelochus/bt-crazyflies/main/scripts/deps/deps-install.sh && bash deps-install.sh
 ```
 
 ### What is installed
