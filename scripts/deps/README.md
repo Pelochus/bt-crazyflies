@@ -29,6 +29,8 @@ git submodule update --init --recursive sw/ext/eigen
 
 For configurations:
 - Adds the current user to the group dialout
+- Configures the Crazyradio 2.0 USB permissions
 
 ### Useful Links
 - Flashing firmware on Crazyflie: https://wiki.paparazziuav.org/wiki/Crazyflie_2.0
+- Make Crazyradio 2.0 work: https://www.bitcraze.io/documentation/repository/crazyflie-lib-python/master/installation/usb_permissions/
