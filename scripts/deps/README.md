@@ -12,6 +12,8 @@ Your ```sudo``` password will be asked:
 wget https://raw.githubusercontent.com/Pelochus/bt-crazyflies/main/scripts/deps/deps-install.sh && bash deps-install.sh
 ```
 
+**NOTE: Similar to Debian installation scripts, should not be run as sudo unless you want it installed for root user**
+
 ### What is installed/configured
 This script install the following packages:
 - dfu-util
