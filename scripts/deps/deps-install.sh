@@ -5,7 +5,7 @@
 #####################
 
 # Install needed packages for the BT
-sudo apt install -y dfu-util dfu-programmer gedit
+sudo apt install -y dfu-util dfu-programmer gedit openocd
 
 # Same but for python packages
 pip install cflib --break-system-packages # This flag is necessary for Python 3.11+, but should not be dangerous
