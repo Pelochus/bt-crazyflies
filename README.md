@@ -11,7 +11,6 @@ This project uses the Crazyflie 2.1 from Bitcraze with its corresponding accesso
 ## Index
 
 ### Documents
-
 Remember to actually add the link to the PDF later
 1. [PDF](https://github.com/Pelochus/bt-crazyflies/tree/main/docs/LaTeX/pdf/)
 2. [LaTeX Files](https://github.com/Pelochus/bt-crazyflies/tree/main/docs/LaTeX)
@@ -25,3 +24,7 @@ Useful scripts for installing required packages, sources and dependencies for th
 ### Code
 
 1. [TODO](todo)
+
+### Other
+- In the ```firmware``` folder there is a copy of the working firmwares for Crazyflie 2.1 and Crazyradio.
+    - TODO add final Paparazzi firmware for this thesis
