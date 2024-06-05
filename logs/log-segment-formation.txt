@@ -1,0 +1,2159 @@
+python segmentFormation.py formation/segment/segment_two_bebops.json -v
+{"ids": [8, 9], "desired_normalized_offset": [0], "nominal_speed": 0.25, "gain": 0.18}
+Waiting for state of aircraft  8
+Waiting for state of aircraft  8
+Waiting for state of aircraft  8
+Waiting for state of aircraft  8
+Waiting for state of aircraft  8
+Waiting for state of aircraft  8
+
+
+Inter-vehicle line offset:  0.32652741529460294
+
+Inter-vehicle line offset:  0.22306413279255222
+
+Inter-vehicle line offset:  0.1665093342096018
+
+Inter-vehicle line offset:  0.0865321531997072
+
+Inter-vehicle line offset:  0.00850364559661454
+
+Inter-vehicle line offset:  -0.022719547296845777
+
+Inter-vehicle line offset:  -0.06963768860257757
+
+Inter-vehicle line offset:  -0.15156136344105775
+
+Inter-vehicle line offset:  -0.22178483073745148
+
+Inter-vehicle line offset:  -0.2959060026327216
+
+Inter-vehicle line offset:  -0.2959060026327216
+
+Inter-vehicle line offset:  -0.3758762860826441
+
+Inter-vehicle line offset:  -0.43634375862165675
+
+Inter-vehicle line offset:  -0.5065602912444547
+
+Inter-vehicle line offset:  -0.5709241483217574
+
+Inter-vehicle line offset:  -0.5865282584971881
+
+Inter-vehicle line offset:  -0.6334346372732941
+
+Inter-vehicle line offset:  -0.7016931776684449
+
+Inter-vehicle line offset:  -0.7563015848056963
+
+Inter-vehicle line offset:  -0.8129721417280154
+
+Inter-vehicle line offset:  -0.8129721417280154
+
+Inter-vehicle line offset:  -0.8773292322053766
+
+Inter-vehicle line offset:  -0.9202400765598835
+
+Inter-vehicle line offset:  -0.9709487038932114
+
+Inter-vehicle line offset:  -1.0216566304305141
+
+Inter-vehicle line offset:  -1.0372485386975074
+
+Inter-vehicle line offset:  -1.0685526703344812
+
+Inter-vehicle line offset:  -1.119262330646952
+
+Inter-vehicle line offset:  -1.1582700643551676
+
+Inter-vehicle line offset:  -1.2011801148101369
+
+Inter-vehicle line offset:  -1.2109220383471448
+
+Inter-vehicle line offset:  -1.2518982861258539
+
+Inter-vehicle line offset:  -1.283103919962009
+
+Inter-vehicle line offset:  -1.3201699575582126
+
+Inter-vehicle line offset:  -1.357315918105685
+
+Inter-vehicle line offset:  -1.3748714253053773
+
+Inter-vehicle line offset:  -1.3865797038390473
+
+Inter-vehicle line offset:  -1.409989618382542
+
+Inter-vehicle line offset:  -1.4216946432239506
+
+Inter-vehicle line offset:  -1.4236425070704644
+
+Inter-vehicle line offset:  -1.4236425070704644
+
+Inter-vehicle line offset:  -1.4177882194037728
+
+Inter-vehicle line offset:  -1.4021804543150078
+
+Inter-vehicle line offset:  -1.382666565344835
+
+Inter-vehicle line offset:  -1.357302413229689
+
+Inter-vehicle line offset:  -1.3241368638662947
+
+Inter-vehicle line offset:  -1.3241368638662947
+
+Inter-vehicle line offset:  -1.289017494178467
+
+Inter-vehicle line offset:  -1.2558502789968466
+
+Inter-vehicle line offset:  -1.2168336971290787
+
+Inter-vehicle line offset:  -1.1776744543439746
+
+Inter-vehicle line offset:  -1.165968364879768
+
+Inter-vehicle line offset:  -1.1367070239289112
+
+Inter-vehicle line offset:  -1.095741320698321
+
+Inter-vehicle line offset:  -1.056725246347718
+
+Inter-vehicle line offset:  -1.0177111742345581
+
+Inter-vehicle line offset:  -1.0177111742345581
+
+Inter-vehicle line offset:  -0.9806469990776358
+
+Inter-vehicle line offset:  -0.9435850899241255
+
+Inter-vehicle line offset:  -0.9045753242773057
+
+Inter-vehicle line offset:  -0.8694662407255165
+
+Inter-vehicle line offset:  -0.8714138449046247
+
+Inter-vehicle line offset:  -0.8382574455170393
+
+Inter-vehicle line offset:  -0.8051012937462415
+
+Inter-vehicle line offset:  -0.7738954975493313
+
+Inter-vehicle line offset:  -0.7446422667731464
+
+Inter-vehicle line offset:  -0.7446422667731464
+
+Inter-vehicle line offset:  -0.7134404202887487
+
+Inter-vehicle line offset:  -0.6880895698397556
+
+Inter-vehicle line offset:  -0.6646880958817224
+
+Inter-vehicle line offset:  -0.6393406015128016
+
+Inter-vehicle line offset:  -0.6295976720025005
+
+Inter-vehicle line offset:  -0.6159425419400869
+
+Inter-vehicle line offset:  -0.5944957085274938
+
+Inter-vehicle line offset:  -0.57499708276369
+
+Inter-vehicle line offset:  -0.5555008652430843
+
+Inter-vehicle line offset:  -0.5555008652430843
+
+Inter-vehicle line offset:  -0.5398959422532719
+
+Inter-vehicle line offset:  -0.5184606056523797
+
+Inter-vehicle line offset:  -0.5007162207178222
+
+Inter-vehicle line offset:  -0.48705413903558603
+
+Inter-vehicle line offset:  -0.494819385238606
+
+Inter-vehicle line offset:  -0.47339126537034826
+
+Inter-vehicle line offset:  -0.4577827104941371
+
+Inter-vehicle line offset:  -0.4441179947370709
+
+Inter-vehicle line offset:  -0.4323881132738965
+
+Inter-vehicle line offset:  -0.4323881132738965
+
+Inter-vehicle line offset:  -0.41870995547421186
+
+Inter-vehicle line offset:  -0.40890898709631984
+
+Inter-vehicle line offset:  -0.39715592204338446
+
+Inter-vehicle line offset:  -0.3776339974183768
+
+Inter-vehicle line offset:  -0.3752905105696903
+
+Inter-vehicle line offset:  -0.3752905105696903
+
+Inter-vehicle line offset:  -0.36540637678619103
+
+Inter-vehicle line offset:  -0.34218966358631653
+
+Inter-vehicle line offset:  -0.3454592167010344
+
+Inter-vehicle line offset:  -0.3373021990528815
+
+Inter-vehicle line offset:  -0.34108019632468367
+
+Inter-vehicle line offset:  -0.30781945188478543
+
+Inter-vehicle line offset:  -0.32046892860407505
+
+Inter-vehicle line offset:  -0.3187581598527909
+
+Inter-vehicle line offset:  -0.30222591677936994
+
+Inter-vehicle line offset:  -0.27735658129767105
+
+Inter-vehicle line offset:  -0.2936524581270923
+
+Inter-vehicle line offset:  -0.2903152278580402
+
+Inter-vehicle line offset:  -0.2654820004221169
+
+Inter-vehicle line offset:  -0.2416790602077572
+
+Inter-vehicle line offset:  -0.2416790602077572
+
+Inter-vehicle line offset:  -0.19923093466454644
+
+Inter-vehicle line offset:  -0.16732059866803706
+
+Inter-vehicle line offset:  -0.1206912040871353
+
+Inter-vehicle line offset:  -0.090217114967443
+
+Inter-vehicle line offset:  -0.08706298944325386
+
+Inter-vehicle line offset:  -0.05837350989294532
+
+Inter-vehicle line offset:  -0.028030650635945786
+
+Inter-vehicle line offset:  -0.02274873209617334
+
+Inter-vehicle line offset:  -0.020892001915356895
+
+Inter-vehicle line offset:  -0.02916863617633736
+
+Inter-vehicle line offset:  -0.025729959057370633
+
+Inter-vehicle line offset:  -0.03303982053352983
+
+Inter-vehicle line offset:  -0.035848261343189525
+
+Inter-vehicle line offset:  -0.035902566731666696
+
+Inter-vehicle line offset:  -0.016497076999681726
+
+Inter-vehicle line offset:  -0.017946612122393457
+
+Inter-vehicle line offset:  0.024803479265504413
+
+Inter-vehicle line offset:  0.04424374428453259
+
+Inter-vehicle line offset:  0.0862659986892762
+
+Inter-vehicle line offset:  0.12218476393031485
+
+Inter-vehicle line offset:  0.16078590677363247
+
+Inter-vehicle line offset:  0.18083986206528546
+
+Inter-vehicle line offset:  0.22552333230684962
+
+Inter-vehicle line offset:  0.26062271017186234
+
+Inter-vehicle line offset:  0.29920901779100917
+
+Inter-vehicle line offset:  0.2868807236231675
+
+Inter-vehicle line offset:  0.29341744853303775
+
+Inter-vehicle line offset:  0.3170194207065611
+
+Inter-vehicle line offset:  0.32816234566389413
+
+Inter-vehicle line offset:  0.3317050013398385
+
+Inter-vehicle line offset:  0.3110809212903638
+
+Inter-vehicle line offset:  0.33543149515361104
+
+Inter-vehicle line offset:  0.3547929479576445
+
+Inter-vehicle line offset:  0.3445315661003211
+
+Inter-vehicle line offset:  0.359000036835316
+
+Inter-vehicle line offset:  0.3495189357724082
+
+Inter-vehicle line offset:  0.37570731557442727
+
+Inter-vehicle line offset:  0.35889512098318554
+
+Inter-vehicle line offset:  0.3635205894759237
+
+Inter-vehicle line offset:  0.3698338731410692
+
+Inter-vehicle line offset:  0.3990622696970686
+
+Inter-vehicle line offset:  0.3738463463455254
+
+Inter-vehicle line offset:  0.3742640552852734
+
+Inter-vehicle line offset:  0.3842766088416436
+
+Inter-vehicle line offset:  0.3904072757696846
+
+Inter-vehicle line offset:  0.3904072757696846
+
+Inter-vehicle line offset:  0.3829421725246974
+
+Inter-vehicle line offset:  0.4026869435165412
+
+Inter-vehicle line offset:  0.41457620698395314
+
+Inter-vehicle line offset:  0.37964053404681586
+
+Inter-vehicle line offset:  0.3990214208127869
+
+Inter-vehicle line offset:  0.4244494621634417
+
+Inter-vehicle line offset:  0.44410790004613676
+
+Inter-vehicle line offset:  0.4403452777387087
+
+Inter-vehicle line offset:  0.44641516614981214
+
+Inter-vehicle line offset:  0.44641516614981214
+
+Inter-vehicle line offset:  0.477741670038909
+
+Inter-vehicle line offset:  0.46419268115779855
+
+Inter-vehicle line offset:  0.4720927768953289
+
+Inter-vehicle line offset:  0.4819384776511022
+
+Inter-vehicle line offset:  0.5112089938555111
+
+Inter-vehicle line offset:  0.4916200770111292
+
+Inter-vehicle line offset:  0.4956157250087354
+
+Inter-vehicle line offset:  0.5094211051013893
+
+Inter-vehicle line offset:  0.5192513691142611
+
+Inter-vehicle line offset:  0.5192513691142611
+
+Inter-vehicle line offset:  0.5193392768226686
+
+Inter-vehicle line offset:  0.5408492835917578
+
+Inter-vehicle line offset:  0.5545732868283915
+
+Inter-vehicle line offset:  0.5642527431336346
+
+Inter-vehicle line offset:  0.5467180624052652
+
+Inter-vehicle line offset:  0.5741387881190922
+
+Inter-vehicle line offset:  0.5976130234054087
+
+Inter-vehicle line offset:  0.5976660449189417
+
+Inter-vehicle line offset:  0.6074732247326959
+
+Inter-vehicle line offset:  0.6074732247326959
+
+Inter-vehicle line offset:  0.6211853425096463
+
+Inter-vehicle line offset:  0.6017087699836923
+
+Inter-vehicle line offset:  0.5802778847584318
+
+Inter-vehicle line offset:  0.5802778847584318
+
+Inter-vehicle line offset:  0.5411609945132838
+
+Inter-vehicle line offset:  0.5041143397591494
+
+Inter-vehicle line offset:  0.4475477232791121
+
+Inter-vehicle line offset:  0.3909706630881147
+
+Inter-vehicle line offset:  0.32463692054446747
+
+Inter-vehicle line offset:  0.32463692054446747
+
+Inter-vehicle line offset:  0.24464779039119633
+
+Inter-vehicle line offset:  0.17830357658630813
+
+Inter-vehicle line offset:  0.09830494921136901
+
+Inter-vehicle line offset:  0.02210775139121357
+
+Inter-vehicle line offset:  0.006505347550147533
+
+Inter-vehicle line offset:  -0.05593730118836748
+
+Inter-vehicle line offset:  -0.14764286231291934
+
+Inter-vehicle line offset:  -0.2159292648033917
+
+Inter-vehicle line offset:  -0.29397263973279
+
+Inter-vehicle line offset:  -0.29397263973279
+
+Inter-vehicle line offset:  -0.3895764758763942
+
+Inter-vehicle line offset:  -0.44615388988281013
+
+Inter-vehicle line offset:  -0.512488133750872
+
+Inter-vehicle line offset:  -0.5730608960347348
+
+Inter-vehicle line offset:  -0.5964724217860831
+
+Inter-vehicle line offset:  -0.6198826599682996
+
+Inter-vehicle line offset:  -0.6549977457064162
+
+Inter-vehicle line offset:  -0.6823078676894432
+
+Inter-vehicle line offset:  -0.6999585429571329
+
+Inter-vehicle line offset:  -0.6999585429571329
+
+Inter-vehicle line offset:  -0.7038591269590424
+
+Inter-vehicle line offset:  -0.7136109389459286
+
+Inter-vehicle line offset:  -0.7097077137337666
+
+Inter-vehicle line offset:  -0.6999531010386346
+
+Inter-vehicle line offset:  -0.6843492605785264
+
+Inter-vehicle line offset:  -0.690198566432296
+
+Inter-vehicle line offset:  -0.6804440703368431
+
+Inter-vehicle line offset:  -0.6570395407439469
+
+Inter-vehicle line offset:  -0.6375364174000133
+
+Inter-vehicle line offset:  -0.6375364174000133
+
+Inter-vehicle line offset:  -0.62388423367675
+
+Inter-vehicle line offset:  -0.5946352675028441
+
+Inter-vehicle line offset:  -0.5731875440002248
+
+Inter-vehicle line offset:  -0.5517419260767507
+
+Inter-vehicle line offset:  -0.5692872895928576
+
+Inter-vehicle line offset:  -0.5302985871841015
+
+Inter-vehicle line offset:  -0.5030100826289434
+
+Inter-vehicle line offset:  -0.48547033897797354
+
+Inter-vehicle line offset:  -0.4640352037412294
+
+Inter-vehicle line offset:  -0.48157627620288457
+
+Inter-vehicle line offset:  -0.43272917216908513
+
+Inter-vehicle line offset:  -0.4229893535332696
+
+Inter-vehicle line offset:  -0.40545765869070527
+
+Inter-vehicle line offset:  -0.3859806035746821
+
+Inter-vehicle line offset:  -0.36845556610534436
+
+Inter-vehicle line offset:  -0.36845556610534436
+
+Inter-vehicle line offset:  -0.35677837128318335
+
+Inter-vehicle line offset:  -0.3353649083182527
+
+Inter-vehicle line offset:  -0.3197996209066468
+
+Inter-vehicle line offset:  -0.3061851003477576
+
+Inter-vehicle line offset:  -0.31592134394549487
+
+Inter-vehicle line offset:  -0.2945217265618413
+
+Inter-vehicle line offset:  -0.2828622779672909
+
+Inter-vehicle line offset:  -0.27120718078449124
+
+Inter-vehicle line offset:  -0.2597213060481839
+
+Inter-vehicle line offset:  -0.2597213060481839
+
+Inter-vehicle line offset:  -0.24808153813033562
+
+Inter-vehicle line offset:  -0.240336565745202
+
+Inter-vehicle line offset:  -0.2306514050789663
+
+Inter-vehicle line offset:  -0.22097524454217088
+
+Inter-vehicle line offset:  -0.21320958935057133
+
+Inter-vehicle line offset:  -0.2132472589427219
+
+Inter-vehicle line offset:  -0.2074684968082301
+
+Inter-vehicle line offset:  -0.19975344536953454
+
+Inter-vehicle line offset:  -0.19398723531889517
+
+Inter-vehicle line offset:  -0.19398723531889517
+
+Inter-vehicle line offset:  -0.1921064864249663
+
+Inter-vehicle line offset:  -0.1805376969232627
+
+Inter-vehicle line offset:  -0.1747955589385498
+
+Inter-vehicle line offset:  -0.1709928334373616
+
+Inter-vehicle line offset:  -0.18066314304796305
+
+Inter-vehicle line offset:  -0.1652677749168695
+
+Inter-vehicle line offset:  -0.1595536240940093
+
+Inter-vehicle line offset:  -0.15769821420463592
+
+Inter-vehicle line offset:  -0.15200023096893134
+
+Inter-vehicle line offset:  -0.15200023096893134
+
+Inter-vehicle line offset:  -0.1482258560486862
+
+Inter-vehicle line offset:  -0.14445286266613555
+
+Inter-vehicle line offset:  -0.14066833283449898
+
+Inter-vehicle line offset:  -0.1387512557316275
+
+Inter-vehicle line offset:  -0.13119653701009903
+
+Inter-vehicle line offset:  -0.13488179549044665
+
+Inter-vehicle line offset:  -0.13093108658145547
+
+Inter-vehicle line offset:  -0.12862627472266386
+
+Inter-vehicle line offset:  -0.12337057267246287
+
+Inter-vehicle line offset:  -0.12337057267246287
+
+Inter-vehicle line offset:  -0.12298330531317958
+
+Inter-vehicle line offset:  -0.11303097231483061
+
+Inter-vehicle line offset:  -0.10447198123283274
+
+Inter-vehicle line offset:  -0.08906825840668431
+
+Inter-vehicle line offset:  -0.08689768936474596
+
+Inter-vehicle line offset:  -0.062494270149484055
+
+Inter-vehicle line offset:  -0.0314231222448752
+
+Inter-vehicle line offset:  -0.004985052757067399
+
+Inter-vehicle line offset:  0.008503086276672067
+
+Inter-vehicle line offset:  0.011600854541681471
+
+Inter-vehicle line offset:  0.004828037257321061
+
+Inter-vehicle line offset:  -0.01057287754525238
+
+Inter-vehicle line offset:  -0.03027945545755506
+
+Inter-vehicle line offset:  -0.05097946768748651
+
+Inter-vehicle line offset:  -0.06512428491141453
+
+Inter-vehicle line offset:  -0.06512428491141453
+
+Inter-vehicle line offset:  -0.0711724994636116
+
+Inter-vehicle line offset:  -0.05803220540928056
+
+Inter-vehicle line offset:  -0.03790291784460942
+
+Inter-vehicle line offset:  -0.0034595194730028256
+
+Inter-vehicle line offset:  0.0011125022873724744
+
+Inter-vehicle line offset:  0.03532462817126314
+
+Inter-vehicle line offset:  0.06603861384758236
+
+Inter-vehicle line offset:  0.0914180002802869
+
+Inter-vehicle line offset:  0.10793083896462952
+
+Inter-vehicle line offset:  0.0890493206195887
+
+Inter-vehicle line offset:  0.12085818878796539
+
+Inter-vehicle line offset:  0.12542203199016866
+
+Inter-vehicle line offset:  0.13087815789531398
+
+Inter-vehicle line offset:  0.13395054970656006
+
+Inter-vehicle line offset:  0.13810107514935965
+
+Inter-vehicle line offset:  0.16510849516389658
+
+Inter-vehicle line offset:  0.13977464299594822
+
+Inter-vehicle line offset:  0.13543446393702896
+
+Inter-vehicle line offset:  0.14403644226778467
+
+Inter-vehicle line offset:  0.1789275440336222
+
+Inter-vehicle line offset:  0.14487251443641436
+
+Inter-vehicle line offset:  0.13412775099687047
+
+Inter-vehicle line offset:  0.14790557389841963
+
+Inter-vehicle line offset:  0.15421857548949025
+
+Inter-vehicle line offset:  0.15421857548949025
+
+Inter-vehicle line offset:  0.13152503129271942
+
+Inter-vehicle line offset:  0.15500667049174544
+
+Inter-vehicle line offset:  0.170896341299964
+
+Inter-vehicle line offset:  0.15950820769202645
+
+Inter-vehicle line offset:  0.1324471826053376
+
+Inter-vehicle line offset:  0.16171111797528137
+
+Inter-vehicle line offset:  0.18518560177567012
+
+Inter-vehicle line offset:  0.1678651789560306
+
+Inter-vehicle line offset:  0.17194763328583285
+
+Inter-vehicle line offset:  0.17194763328583285
+
+Inter-vehicle line offset:  0.20134536807836145
+
+Inter-vehicle line offset:  0.17617269435767768
+
+Inter-vehicle line offset:  0.17633279974234795
+
+Inter-vehicle line offset:  0.18424053817180197
+
+Inter-vehicle line offset:  0.2212776205666629
+
+Inter-vehicle line offset:  0.1863149591283788
+
+Inter-vehicle line offset:  0.1785859383588213
+
+Inter-vehicle line offset:  0.19424994855677924
+
+Inter-vehicle line offset:  0.20214880786449219
+
+Inter-vehicle line offset:  0.23529791260489508
+
+Inter-vehicle line offset:  0.18473944274604803
+
+Inter-vehicle line offset:  0.20623113258892234
+
+Inter-vehicle line offset:  0.21996667178848672
+
+Inter-vehicle line offset:  0.21419449655605516
+
+Inter-vehicle line offset:  0.2181658286548287
+
+Inter-vehicle line offset:  0.2181658286548287
+
+Inter-vehicle line offset:  0.23963048676348797
+
+Inter-vehicle line offset:  0.2260455764958753
+
+Inter-vehicle line offset:  0.23195986266814628
+
+Inter-vehicle line offset:  0.26902584176685407
+
+Inter-vehicle line offset:  0.26128275451884275
+
+Inter-vehicle line offset:  0.24183378763620955
+
+Inter-vehicle line offset:  0.24189440725012035
+
+Inter-vehicle line offset:  0.24974712783599484
+
+Inter-vehicle line offset:  0.25565022604615995
+
+Inter-vehicle line offset:  0.25565022604615995
+
+Inter-vehicle line offset:  0.2517575700754291
+
+Inter-vehicle line offset:  0.26739948998560137
+
+Inter-vehicle line offset:  0.27330140593104546
+
+Inter-vehicle line offset:  0.27724755085606523
+
+Inter-vehicle line offset:  0.26165727164194097
+
+Inter-vehicle line offset:  0.28314363731342707
+
+Inter-vehicle line offset:  0.29879603608183625
+
+Inter-vehicle line offset:  0.2968834735546555
+
+Inter-vehicle line offset:  0.2989468612439168
+
+Inter-vehicle line offset:  0.32236567878529976
+
+Inter-vehicle line offset:  0.29898189592440527
+
+Inter-vehicle line offset:  0.27547938956878393
+
+Inter-vehicle line offset:  0.24819058764807855
+
+Inter-vehicle line offset:  0.21114191986776354
+
+Inter-vehicle line offset:  0.16433359113756563
+
+Inter-vehicle line offset:  0.16433359113756563
+
+Inter-vehicle line offset:  0.10776933168994485
+
+Inter-vehicle line offset:  0.053148804480455336
+
+Inter-vehicle line offset:  -0.00927538896304636
+
+Inter-vehicle line offset:  -0.07180928539908615
+
+Inter-vehicle line offset:  -0.07960950621461249
+
+Inter-vehicle line offset:  -0.13228771449978383
+
+Inter-vehicle line offset:  -0.18496600276814656
+
+Inter-vehicle line offset:  -0.2259398869101128
+
+Inter-vehicle line offset:  -0.22398974189714194
+
+Inter-vehicle line offset:  -0.2610639760235922
+
+Inter-vehicle line offset:  -0.2981401488614608
+
+Inter-vehicle line offset:  -0.31189362148467503
+
+Inter-vehicle line offset:  -0.3275135253344952
+
+Inter-vehicle line offset:  -0.3275135253344952
+
+Inter-vehicle line offset:  -0.3528885031667275
+
+Inter-vehicle line offset:  -0.3431496904164868
+
+Inter-vehicle line offset:  -0.3451169902409075
+
+Inter-vehicle line offset:  -0.34513479699782823
+
+Inter-vehicle line offset:  -0.3665906432086794
+
+Inter-vehicle line offset:  -0.34320245263677185
+
+Inter-vehicle line offset:  -0.3354227723308971
+
+Inter-vehicle line offset:  -0.3295925865532987
+
+Inter-vehicle line offset:  -0.32181460270161777
+
+Inter-vehicle line offset:  -0.3510653429170947
+
+Inter-vehicle line offset:  -0.3023445316961657
+
+Inter-vehicle line offset:  -0.302363807513228
+
+Inter-vehicle line offset:  -0.29250797670728224
+
+Inter-vehicle line offset:  -0.28083514435767576
+
+Inter-vehicle line offset:  -0.2905954583884802
+
+Inter-vehicle line offset:  -0.2711143586043572
+
+Inter-vehicle line offset:  -0.2652945857366673
+
+Inter-vehicle line offset:  -0.24778236130711595
+
+Inter-vehicle line offset:  -0.23612125578034915
+
+Inter-vehicle line offset:  -0.2635322833257061
+
+Inter-vehicle line offset:  -0.23823150792480652
+
+Inter-vehicle line offset:  -0.21488729243147753
+
+Inter-vehicle line offset:  -0.20518722984675164
+
+Inter-vehicle line offset:  -0.19549133351845627
+
+Inter-vehicle line offset:  -0.18774538848972488
+
+Inter-vehicle line offset:  -0.18774538848972488
+
+Inter-vehicle line offset:  -0.17611370130866333
+
+Inter-vehicle line offset:  -0.17032177006044225
+
+Inter-vehicle line offset:  -0.16064600906852355
+
+Inter-vehicle line offset:  -0.15292022177548847
+
+Inter-vehicle line offset:  -0.14514726541514877
+
+Inter-vehicle line offset:  -0.14520055682045574
+
+Inter-vehicle line offset:  -0.14137580485127876
+
+Inter-vehicle line offset:  -0.13366926436175852
+
+Inter-vehicle line offset:  -0.12791621953768184
+
+Inter-vehicle line offset:  -0.12791621953768184
+
+Inter-vehicle line offset:  -0.12799999404294615
+
+Inter-vehicle line offset:  -0.11836856231230874
+
+Inter-vehicle line offset:  -0.11264156234625478
+
+Inter-vehicle line offset:  -0.10886204023159363
+
+Inter-vehicle line offset:  -0.1185741425012663
+
+Inter-vehicle line offset:  -0.10509260966576006
+
+Inter-vehicle line offset:  -0.10133451824505735
+
+Inter-vehicle line offset:  -0.09781506671368889
+
+Inter-vehicle line offset:  -0.09409486017102331
+
+Inter-vehicle line offset:  -0.09409486017102331
+
+Inter-vehicle line offset:  -0.0903922388747288
+
+Inter-vehicle line offset:  -0.08863403666556269
+
+Inter-vehicle line offset:  -0.08497173496713872
+
+Inter-vehicle line offset:  -0.07558444059640501
+
+Inter-vehicle line offset:  -0.05068709497766388
+
+Inter-vehicle line offset:  -0.07964456370459894
+
+Inter-vehicle line offset:  -0.07990559432868072
+
+Inter-vehicle line offset:  -0.06305654482124368
+
+Inter-vehicle line offset:  -0.0747679581117826
+
+Inter-vehicle line offset:  -0.07323597359321965
+
+Inter-vehicle line offset:  -0.07705573528832776
+
+Inter-vehicle line offset:  -0.05300881343272934
+
+Inter-vehicle line offset:  -0.07030995330645651
+
+Inter-vehicle line offset:  -0.0689259355613061
+
+Inter-vehicle line offset:  -0.06946992842101818
+
+Inter-vehicle line offset:  -0.04592323037279189
+
+Inter-vehicle line offset:  -0.06640968726167451
+
+Inter-vehicle line offset:  -0.06615954481002051
+
+Inter-vehicle line offset:  -0.0648320791899979
+
+Inter-vehicle line offset:  -0.06494819301783783
+
+Inter-vehicle line offset:  -0.06494819301783783
+
+Inter-vehicle line offset:  -0.06414768389874581
+
+Inter-vehicle line offset:  -0.05878336168463327
+
+Inter-vehicle line offset:  -0.04909491251411069
+
+Inter-vehicle line offset:  -0.03933771083663684
+
+Inter-vehicle line offset:  -0.03933771083663684
+
+Inter-vehicle line offset:  -0.025295437311100843
+
+Inter-vehicle line offset:  -0.017938681333306006
+
+Inter-vehicle line offset:  -0.012323004751660815
+
+Inter-vehicle line offset:  -0.017461561488471333
+
+Inter-vehicle line offset:  -0.017461561488471333
+
+Inter-vehicle line offset:  -0.03135498468913833
+
+Inter-vehicle line offset:  -0.0372645551325087
+
+Inter-vehicle line offset:  -0.04954686916667583
+
+Inter-vehicle line offset:  -0.051418038619018835
+
+Inter-vehicle line offset:  -0.044389613748276435
+
+Inter-vehicle line offset:  -0.052137734299177896
+
+Inter-vehicle line offset:  -0.04477595103437826
+
+Inter-vehicle line offset:  -0.03160469179516856
+
+Inter-vehicle line offset:  -0.010551382796268993
+
+Inter-vehicle line offset:  -0.010551382796268993
+
+Inter-vehicle line offset:  0.03077607897560164
+
+Inter-vehicle line offset:  0.024575722215507856
+
+Inter-vehicle line offset:  0.03136499367735057
+
+Inter-vehicle line offset:  0.04213355201971847
+
+Inter-vehicle line offset:  0.075499851360329
+
+Inter-vehicle line offset:  0.046648697135122985
+
+Inter-vehicle line offset:  0.036866493616732554
+
+Inter-vehicle line offset:  0.05167673222919433
+
+Inter-vehicle line offset:  0.05743224664148339
+
+Inter-vehicle line offset:  0.09192755274241005
+
+Inter-vehicle line offset:  0.03466850745943406
+
+Inter-vehicle line offset:  0.05630887015635411
+
+Inter-vehicle line offset:  0.06886415242357546
+
+Inter-vehicle line offset:  0.05837960628413119
+
+Inter-vehicle line offset:  0.06855606293361172
+
+Inter-vehicle line offset:  0.059040868037566696
+
+Inter-vehicle line offset:  0.07853960851707986
+
+Inter-vehicle line offset:  0.06159798388216753
+
+Inter-vehicle line offset:  0.06011046220545524
+
+Inter-vehicle line offset:  0.09892560474552992
+
+Inter-vehicle line offset:  0.087672236216224
+
+Inter-vehicle line offset:  0.06469042394145486
+
+Inter-vehicle line offset:  0.05920791573859141
+
+Inter-vehicle line offset:  0.06526620010690609
+
+Inter-vehicle line offset:  0.10239352261833523
+
+Inter-vehicle line offset:  0.0676235408916448
+
+Inter-vehicle line offset:  0.057900485475078534
+
+Inter-vehicle line offset:  0.06970507806625825
+
+Inter-vehicle line offset:  0.07378273680215253
+
+Inter-vehicle line offset:  0.10687570883838537
+
+Inter-vehicle line offset:  0.05456514080717001
+
+Inter-vehicle line offset:  0.07410406674493597
+
+Inter-vehicle line offset:  0.08787744689245214
+
+Inter-vehicle line offset:  0.07827741019931622
+
+Inter-vehicle line offset:  0.08048512112397121
+
+Inter-vehicle line offset:  0.08048512112397121
+
+Inter-vehicle line offset:  0.09792279179210017
+
+Inter-vehicle line offset:  0.08244604366422026
+
+Inter-vehicle line offset:  0.08449875509522653
+
+Inter-vehicle line offset:  0.08654594165370244
+
+Inter-vehicle line offset:  0.10993539994348267
+
+Inter-vehicle line offset:  0.08858271945707163
+
+Inter-vehicle line offset:  0.08673161522522599
+
+Inter-vehicle line offset:  0.09265378089179643
+
+Inter-vehicle line offset:  0.09467854646078333
+
+Inter-vehicle line offset:  0.09467854646078333
+
+Inter-vehicle line offset:  0.08691673130837274
+
+Inter-vehicle line offset:  0.09866316196021918
+
+Inter-vehicle line offset:  0.1026339370216609
+
+Inter-vehicle line offset:  0.10269761557697121
+
+Inter-vehicle line offset:  0.08518029368193925
+
+Inter-vehicle line offset:  0.1027622291041328
+
+Inter-vehicle line offset:  0.11452286797935285
+
+Inter-vehicle line offset:  0.10872757667123767
+
+Inter-vehicle line offset:  0.11073187280462538
+
+Inter-vehicle line offset:  0.11073187280462538
+
+Inter-vehicle line offset:  0.12843803707243828
+
+Inter-vehicle line offset:  0.11468737345278157
+
+Inter-vehicle line offset:  0.11668686971967523
+
+Inter-vehicle line offset:  0.1206355203148104
+
+Inter-vehicle line offset:  0.14209521067793895
+
+Inter-vehicle line offset:  0.12263178439334022
+
+Inter-vehicle line offset:  0.12072986908979866
+
+Inter-vehicle line offset:  0.12857088323169608
+
+Inter-vehicle line offset:  0.13056286265916817
+
+Inter-vehicle line offset:  0.13056286265916817
+
+Inter-vehicle line offset:  0.12476076184420481
+
+Inter-vehicle line offset:  0.13645021552082137
+
+Inter-vehicle line offset:  0.1384392351892909
+
+Inter-vehicle line offset:  0.1306706678974643
+
+Inter-vehicle line offset:  0.11507806657424768
+
+Inter-vehicle line offset:  0.11509530808982515
+
+Inter-vehicle line offset:  0.08976162259848808
+
+Inter-vehicle line offset:  0.05661894926473998
+
+Inter-vehicle line offset:  0.023469295848900007
+
+Inter-vehicle line offset:  0.005907799492131716
+
+Inter-vehicle line offset:  -0.017494923755727587
+
+Inter-vehicle line offset:  -0.037002144111148105
+
+Inter-vehicle line offset:  -0.06237105050496616
+
+Inter-vehicle line offset:  -0.08384181035524918
+
+Inter-vehicle line offset:  -0.11701020994999256
+
+Inter-vehicle line offset:  -0.0995840280578526
+
+Inter-vehicle line offset:  -0.11119066830349467
+
+Inter-vehicle line offset:  -0.12486684645085977
+
+Inter-vehicle line offset:  -0.132696676328947
+
+Inter-vehicle line offset:  -0.16976120666404793
+
+Inter-vehicle line offset:  -0.12883088094440054
+
+Inter-vehicle line offset:  -0.14250820962103838
+
+Inter-vehicle line offset:  -0.1445899378182165
+
+Inter-vehicle line offset:  -0.14462686615315734
+
+Inter-vehicle line offset:  -0.1641491538191615
+
+Inter-vehicle line offset:  -0.14271679278793115
+
+Inter-vehicle line offset:  -0.14860962257135868
+
+Inter-vehicle line offset:  -0.13890222755755288
+
+Inter-vehicle line offset:  -0.135047959360713
+
+Inter-vehicle line offset:  -0.17014719435996528
+
+Inter-vehicle line offset:  -0.1467950250971708
+
+Inter-vehicle line offset:  -0.12734708536698736
+
+Inter-vehicle line offset:  -0.12155401715261016
+
+Inter-vehicle line offset:  -0.1196577499154583
+
+Inter-vehicle line offset:  -0.11386875530744112
+
+Inter-vehicle line offset:  -0.11386875530744112
+
+Inter-vehicle line offset:  -0.10613794771301621
+
+Inter-vehicle line offset:  -0.10230314736326052
+
+Inter-vehicle line offset:  -0.09847228898246252
+
+Inter-vehicle line offset:  -0.09464570744480416
+
+Inter-vehicle line offset:  -0.08492311522470142
+
+Inter-vehicle line offset:  -0.09082377645347228
+
+Inter-vehicle line offset:  -0.08505904142730247
+
+Inter-vehicle line offset:  -0.08319103165576491
+
+Inter-vehicle line offset:  -0.07743820790057598
+
+Inter-vehicle line offset:  -0.07743820790057598
+
+Inter-vehicle line offset:  -0.08142206316965517
+
+Inter-vehicle line offset:  -0.0717838970478577
+
+Inter-vehicle line offset:  -0.06799367062377515
+
+Inter-vehicle line offset:  -0.0642114527538471
+
+Inter-vehicle line offset:  -0.07783087462165417
+
+Inter-vehicle line offset:  -0.060438095821375715
+
+Inter-vehicle line offset:  -0.060556761512427726
+
+Inter-vehicle line offset:  -0.05680246652717402
+
+Inter-vehicle line offset:  -0.05499533947625068
+
+Inter-vehicle line offset:  -0.05499533947625068
+
+Inter-vehicle line offset:  -0.051265222421346235
+
+Inter-vehicle line offset:  -0.04940546557553982
+
+Inter-vehicle line offset:  -0.047633165811642564
+
+Inter-vehicle line offset:  -0.04587589855491869
+
+Inter-vehicle line offset:  -0.04008842598382556
+
+Inter-vehicle line offset:  -0.04413560200430411
+
+Inter-vehicle line offset:  -0.04433947649885561
+
+Inter-vehicle line offset:  -0.0426376679025271
+
+Inter-vehicle line offset:  -0.03902544401675856
+
+Inter-vehicle line offset:  -0.03902544401675856
+
+Inter-vehicle line offset:  -0.0431783430752809
+
+Inter-vehicle line offset:  -0.037677322798447266
+
+Inter-vehicle line offset:  -0.03609856514608667
+
+Inter-vehicle line offset:  -0.03646614129577053
+
+Inter-vehicle line offset:  -0.04801426411649512
+
+Inter-vehicle line offset:  -0.034979682074403384
+
+Inter-vehicle line offset:  -0.03544259218616408
+
+Inter-vehicle line offset:  -0.03408579155174929
+
+Inter-vehicle line offset:  -0.03468440750051904
+
+Inter-vehicle line offset:  -0.03468440750051904
+
+Inter-vehicle line offset:  -0.033516382590328186
+
+Inter-vehicle line offset:  -0.0343151405489277
+
+Inter-vehicle line offset:  -0.03336940668864952
+
+Inter-vehicle line offset:  -0.03268944887494829
+
+Inter-vehicle line offset:  -0.027383819569581025
+
+Inter-vehicle line offset:  -0.03401191711166196
+
+Inter-vehicle line offset:  -0.03556912836932413
+
+Inter-vehicle line offset:  -0.037389056670107945
+
+Inter-vehicle line offset:  -0.03945409570653913
+
+Inter-vehicle line offset:  -0.03945409570653913
+
+Inter-vehicle line offset:  -0.04313359472478917
+
+Inter-vehicle line offset:  -0.04225802571493775
+
+Inter-vehicle line offset:  -0.04260223837666133
+
+Inter-vehicle line offset:  -0.039726202048175785
+
+Inter-vehicle line offset:  -0.03863984807383214
+
+Inter-vehicle line offset:  -0.03391759155880092
+
+Inter-vehicle line offset:  -0.03151156987764758
+
+Inter-vehicle line offset:  -0.029363132057693808
+
+Inter-vehicle line offset:  -0.032081697373821605
+
+Inter-vehicle line offset:  -0.030740456463747345
+
+Inter-vehicle line offset:  -0.035474933691383215
+
+Inter-vehicle line offset:  -0.03964033827277558
+
+Inter-vehicle line offset:  -0.041627232306947204
+
+Inter-vehicle line offset:  -0.043517823737934
+
+Inter-vehicle line offset:  -0.053337486794258315
+
+Inter-vehicle line offset:  -0.04548635571337789
+
+Inter-vehicle line offset:  -0.042442836791580674
+
+Inter-vehicle line offset:  -0.034600862571949165
+
+Inter-vehicle line offset:  -0.022223340070774866
+
+Inter-vehicle line offset:  -0.012460124162656405
+
+Inter-vehicle line offset:  -0.009500170014405063
+
+Inter-vehicle line offset:  -0.01987836773577578
+
+Inter-vehicle line offset:  0.0011238414683309994
+
+Inter-vehicle line offset:  0.006682771606813298
+
+Inter-vehicle line offset:  0.0102806104297678
+
+Inter-vehicle line offset:  -0.015435613853710284
+
+Inter-vehicle line offset:  0.011094771931956848
+
+Inter-vehicle line offset:  0.01313357682577565
+
+Inter-vehicle line offset:  0.014738801796674195
+
+Inter-vehicle line offset:  0.016030578181248867
+
+Inter-vehicle line offset:  0.016030578181248867
+
+Inter-vehicle line offset:  0.015173701608902856
+
+Inter-vehicle line offset:  0.015523479052708344
+
+Inter-vehicle line offset:  0.008705931268522482
+
+Inter-vehicle line offset:  0.017246964191411918
+
+Inter-vehicle line offset:  0.05005572692390137
+
+Inter-vehicle line offset:  0.015878502480183854
+
+Inter-vehicle line offset:  0.002961761082380332
+
+Inter-vehicle line offset:  0.0167570617092907
+
+Inter-vehicle line offset:  0.021000524773499785
+
+Inter-vehicle line offset:  0.021000524773499785
+
+Inter-vehicle line offset:  -0.0017805629268176082
+
+Inter-vehicle line offset:  0.017737343697405095
+
+Inter-vehicle line offset:  0.029329740924379233
+
+Inter-vehicle line offset:  0.019870741035989736
+
+Inter-vehicle line offset:  -0.007148795375240824
+
+Inter-vehicle line offset:  0.02009965576072359
+
+Inter-vehicle line offset:  0.037993767891553176
+
+Inter-vehicle line offset:  0.020687449279468417
+
+Inter-vehicle line offset:  0.02086149174008245
+
+Inter-vehicle line offset:  0.02086149174008245
+
+Inter-vehicle line offset:  0.04436159555585362
+
+Inter-vehicle line offset:  0.023103488997658683
+
+Inter-vehicle line offset:  0.01742171254621594
+
+Inter-vehicle line offset:  0.021194390542216945
+
+Inter-vehicle line offset:  0.05234474752483287
+
+Inter-vehicle line offset:  0.02326617430408362
+
+Inter-vehicle line offset:  0.013680053446567086
+
+Inter-vehicle line offset:  0.025581639702449532
+
+Inter-vehicle line offset:  0.02763143069327767
+
+Inter-vehicle line offset:  0.05879818093868128
+
+Inter-vehicle line offset:  0.008296290366118342
+
+Inter-vehicle line offset:  0.025871782003527688
+
+Inter-vehicle line offset:  0.03764498295355301
+
+Inter-vehicle line offset:  0.02779627167890819
+
+Inter-vehicle line offset:  0.03760016995126736
+
+Inter-vehicle line offset:  0.0298239560933784
+
+Inter-vehicle line offset:  0.04354801306227096
+
+Inter-vehicle line offset:  0.029975949889117892
+
+Inter-vehicle line offset:  0.03199426803145711
+
+Inter-vehicle line offset:  0.06330318086784725
+
+Inter-vehicle line offset:  0.05167598509485671
+
+Inter-vehicle line offset:  0.03224217830802378
+
+Inter-vehicle line offset:  0.030358165495928846
+
+Inter-vehicle line offset:  0.034306812854123514
+
+Inter-vehicle line offset:  0.06745510784447695
+
+Inter-vehicle line offset:  0.03420577807501357
+
+Inter-vehicle line offset:  0.026477131821972755
+
+Inter-vehicle line offset:  0.036263844095342
+
+Inter-vehicle line offset:  0.04021551064216089
+
+Inter-vehicle line offset:  0.03831458338313065
+
+Inter-vehicle line offset:  0.055993012047797164
+
+Inter-vehicle line offset:  0.04041305799592587
+
+Inter-vehicle line offset:  0.04825929790088579
+
+Inter-vehicle line offset:  0.04245086040604762
+
+Inter-vehicle line offset:  0.04249237782335302
+
+Inter-vehicle line offset:  0.04249237782335302
+
+Inter-vehicle line offset:  0.05800075661232351
+
+Inter-vehicle line offset:  0.04438686170187234
+
+Inter-vehicle line offset:  0.046377489955211404
+
+Inter-vehicle line offset:  0.044465188884101
+
+Inter-vehicle line offset:  0.06007253065223672
+
+Inter-vehicle line offset:  0.03669870842806544
+
+Inter-vehicle line offset:  0.02511190779515715
+
+Inter-vehicle line offset:  0.017323010011167206
+
+Inter-vehicle line offset:  0.007576741430272094
+
+Inter-vehicle line offset:  0.007576741430272094
+
+Inter-vehicle line offset:  -0.0021797337844837728
+
+Inter-vehicle line offset:  -0.00999128072179456
+
+Inter-vehicle line offset:  -0.019759581221119316
+
+Inter-vehicle line offset:  -0.02563438544233021
+
+Inter-vehicle line offset:  -0.01394248843603707
+
+Inter-vehicle line offset:  -0.029657305420778268
+
+Inter-vehicle line offset:  -0.04139478120415552
+
+Inter-vehicle line offset:  -0.03752983974396007
+
+Inter-vehicle line offset:  -0.0375721632832271
+
+Inter-vehicle line offset:  -0.0375721632832271
+
+Inter-vehicle line offset:  -0.057119890110245874
+
+Inter-vehicle line offset:  -0.041564668108204694
+
+Inter-vehicle line offset:  -0.04161706494957551
+
+Inter-vehicle line offset:  -0.041671693128146226
+
+Inter-vehicle line offset:  -0.06507180281295377
+
+Inter-vehicle line offset:  -0.041728697717091645
+
+Inter-vehicle line offset:  -0.03984152074797098
+
+Inter-vehicle line offset:  -0.0418504818506138
+
+Inter-vehicle line offset:  -0.03996617696123117
+
+Inter-vehicle line offset:  -0.03996617696123117
+
+Inter-vehicle line offset:  -0.02836032855132342
+
+Inter-vehicle line offset:  -0.0362118942321914
+
+Inter-vehicle line offset:  -0.036283964552820125
+
+Inter-vehicle line offset:  -0.0344149713407238
+
+Inter-vehicle line offset:  -0.05393727283114291
+
+Inter-vehicle line offset:  -0.032550662013849596
+
+Inter-vehicle line offset:  -0.040427682812204546
+
+Inter-vehicle line offset:  -0.030775993076231023
+
+Inter-vehicle line offset:  -0.030869979142529758
+
+Inter-vehicle line offset:  -0.06592466374524864
+
+Inter-vehicle line offset:  -0.04265276863543965
+
+Inter-vehicle line offset:  -0.02718022398629949
+
+Inter-vehicle line offset:  -0.025339456219296563
+
+Inter-vehicle line offset:  -0.023286936132528968
+
+Inter-vehicle line offset:  -0.056370096975378425
+
+Inter-vehicle line offset:  -0.021454128378016524
+
+Inter-vehicle line offset:  -0.02174505079640765
+
+Inter-vehicle line offset:  -0.019933662218029058
+
+Inter-vehicle line offset:  -0.02006865029910898
+
+Inter-vehicle line offset:  -0.05312417469367414
+
+Inter-vehicle line offset:  -0.010535985957282668
+
+Inter-vehicle line offset:  -0.018431284471495002
+
+Inter-vehicle line offset:  -0.016663528215518197
+
+Inter-vehicle line offset:  -0.01684176973540863
+
+Inter-vehicle line offset:  -0.015091980148665085
+
+Inter-vehicle line offset:  -0.015091980148665085
+
+Inter-vehicle line offset:  -0.02111968771044126
+
+Inter-vehicle line offset:  -0.015522755732477078
+
+Inter-vehicle line offset:  -0.013827019807587715
+
+Inter-vehicle line offset:  -0.014091688822872817
+
+Inter-vehicle line offset:  -0.02571004803150545
+
+Inter-vehicle line offset:  -0.012445248284062793
+
+Inter-vehicle line offset:  -0.01276312250003575
+
+Inter-vehicle line offset:  -0.011181372702437797
+
+Inter-vehicle line offset:  -0.011545948354995783
+
+Inter-vehicle line offset:  -0.011545948354995783
+
+Inter-vehicle line offset:  -0.01197468669801538
+
+Inter-vehicle line offset:  -0.01242349440392565
+
+Inter-vehicle line offset:  -0.011037787417284117
+
+Inter-vehicle line offset:  -0.013521764300154393
+
+Inter-vehicle line offset:  -0.006018782235233999
+
+Inter-vehicle line offset:  -0.012293055346244364
+
+Inter-vehicle line offset:  -0.01303004826304821
+
+Inter-vehicle line offset:  -0.012038506348488909
+
+Inter-vehicle line offset:  -0.014917034859933453
+
+Inter-vehicle line offset:  -0.014917034859933453
+
+Inter-vehicle line offset:  -0.020372553388091852
+
+Inter-vehicle line offset:  -0.018045571250231873
+
+Inter-vehicle line offset:  -0.01801643314401269
+
+Inter-vehicle line offset:  -0.02009791480477352
+
+Inter-vehicle line offset:  -0.030808031917558543
+
+Inter-vehicle line offset:  -0.022628444045543317
+
+Inter-vehicle line offset:  -0.02571377425908583
+
+Inter-vehicle line offset:  -0.02668170890284094
+
+Inter-vehicle line offset:  -0.03105931117980454
+
+Inter-vehicle line offset:  -0.03105931117980454
+
+Inter-vehicle line offset:  -0.03571406123858445
+
+Inter-vehicle line offset:  -0.03955976630557112
+
+Inter-vehicle line offset:  -0.0409917372998474
+
+Inter-vehicle line offset:  -0.039359034975172014
+
+Inter-vehicle line offset:  -0.02908771975287283
+
+Inter-vehicle line offset:  -0.03737623092118236
+
+Inter-vehicle line offset:  -0.03397560439990266
+
+Inter-vehicle line offset:  -0.03269568442715132
+
+Inter-vehicle line offset:  -0.032441971019222415
+
+Inter-vehicle line offset:  -0.0379039354517533
+
+Inter-vehicle line offset:  -0.03454835274069734
+
+Inter-vehicle line offset:  -0.03038438760517781
+
+Inter-vehicle line offset:  -0.03747262337501722
+
+Inter-vehicle line offset:  -0.04175944591259528
+
+Inter-vehicle line offset:  -0.046750673178973634
+
+Inter-vehicle line offset:  -0.043850644368496616
+
+Inter-vehicle line offset:  -0.04183123517365184
+
+Inter-vehicle line offset:  -0.03634549644751506
+
+Inter-vehicle line offset:  -0.03291463683082041
+
+Inter-vehicle line offset:  -0.02841742403278269
+
+Inter-vehicle line offset:  -0.02841742403278269
+
+Inter-vehicle line offset:  -0.02635939629226247
+
+Inter-vehicle line offset:  -0.023287739235213878
+
+Inter-vehicle line offset:  -0.027828365893570406
+
+Inter-vehicle line offset:  -0.02160585895910272
+
+Inter-vehicle line offset:  -0.02160585895910272
+
+Inter-vehicle line offset:  -0.02184479971976394
+
+Inter-vehicle line offset:  -0.033339710696484115
+
+Inter-vehicle line offset:  -0.021305877097748116
+
+Inter-vehicle line offset:  -0.016143189315512396
+
+Inter-vehicle line offset:  -0.016143189315512396
+
+Inter-vehicle line offset:  -0.041804367883133686
+
+Inter-vehicle line offset:  -0.02048536827577785
+
+Inter-vehicle line offset:  -0.010290666777338031
+
+Inter-vehicle line offset:  -0.021356129323841566
+
+Inter-vehicle line offset:  -0.04845314704607773
+
+Inter-vehicle line offset:  -0.021346358958953204
+
+Inter-vehicle line offset:  -0.0035454678137007978
+
+Inter-vehicle line offset:  -0.022511786927686184
+
+Inter-vehicle line offset:  -0.022199823336682467
+
+Inter-vehicle line offset:  -0.022199823336682467
+
+Inter-vehicle line offset:  0.0015977872566058648
+
+Inter-vehicle line offset:  -0.023341796840385065
+
+Inter-vehicle line offset:  -0.026967686721628303
+
+Inter-vehicle line offset:  -0.02290092734850102
+
+Inter-vehicle line offset:  0.006214996766454539
+
+Inter-vehicle line offset:  -0.022715130944492068
+
+Inter-vehicle line offset:  -0.03440910807626285
+
+Inter-vehicle line offset:  -0.02457810315694653
+
+Inter-vehicle line offset:  -0.022475379293503517
+
+Inter-vehicle line offset:  0.00862948019664711
+
+Inter-vehicle line offset:  -0.041694550033361866
+
+Inter-vehicle line offset:  -0.024129254211709972
+
+Inter-vehicle line offset:  -0.014269744651995042
+
+Inter-vehicle line offset:  -0.02370209063856965
+
+Inter-vehicle line offset:  -0.017777160131456915
+
+Inter-vehicle line offset:  -0.02553441684129254
+
+Inter-vehicle line offset:  -0.010081797116361368
+
+Inter-vehicle line offset:  -0.02749163245950248
+
+Inter-vehicle line offset:  -0.025448671402240608
+
+Inter-vehicle line offset:  0.005704608267990796
+
+Inter-vehicle line offset:  -0.00587791148475536
+
+Inter-vehicle line offset:  -0.02915332199119125
+
+Inter-vehicle line offset:  -0.03100804424754422
+
+Inter-vehicle line offset:  -0.02704303899737681
+
+Inter-vehicle line offset:  -0.028910337275483533
+
+Inter-vehicle line offset:  -0.028910337275483533
+
+Inter-vehicle line offset:  -0.03842257048960662
+
+Inter-vehicle line offset:  -0.030579871798925184
+
+Inter-vehicle line offset:  -0.028748441295993077
+
+Inter-vehicle line offset:  -0.030631992711998235
+
+Inter-vehicle line offset:  -0.04619103335941399
+
+Inter-vehicle line offset:  -0.03056939169194539
+
+Inter-vehicle line offset:  -0.024658031984033046
+
+Inter-vehicle line offset:  -0.032396750017259945
+
+Inter-vehicle line offset:  -0.032341028620504586
+
+Inter-vehicle line offset:  -0.032341028620504586
+
+Inter-vehicle line offset:  -0.01864040378420606
+
+Inter-vehicle line offset:  -0.03418500882787279
+
+Inter-vehicle line offset:  -0.03402143494722565
+
+Inter-vehicle line offset:  -0.034130346143159906
+
+Inter-vehicle line offset:  -0.014632505832465448
+
+Inter-vehicle line offset:  -0.03408288930983194
+
+Inter-vehicle line offset:  -0.03988123003269628
+
+Inter-vehicle line offset:  -0.03594256135053753
+
+Inter-vehicle line offset:  -0.035899583522953415
+
+Inter-vehicle line offset:  -0.035899583522953415
+
+Inter-vehicle line offset:  -0.04754669599348138
+
+Inter-vehicle line offset:  -0.03776786303590485
+
+Inter-vehicle line offset:  -0.03772875992457836
+
+Inter-vehicle line offset:  -0.031848770960191786
+
+Inter-vehicle line offset:  -0.01432183186123126
+
+Inter-vehicle line offset:  -0.020165955828858717
+
+Inter-vehicle line offset:  -0.004552469939946846
+
+Inter-vehicle line offset:  0.003249606798251481
+
+Inter-vehicle line offset:  0.014940482671351951
+
+Inter-vehicle line offset:  0.011039425845091877
+
+Inter-vehicle line offset:  0.018823968444618533
+
+Inter-vehicle line offset:  0.03244917322028229
+
+Inter-vehicle line offset:  0.040216482921535235
+
+Inter-vehicle line offset:  0.04602648367414064
+
+Inter-vehicle line offset:  0.049881599803238474
+
+Inter-vehicle line offset:  0.049881599803238474
+
+Inter-vehicle line offset:  0.057626309466481285
+
+Inter-vehicle line offset:  0.055623596340749204
+
+Inter-vehicle line offset:  0.05766775157122095
+
+Inter-vehicle line offset:  0.059445234378331824
+
+Inter-vehicle line offset:  0.06917832651249567
+
+Inter-vehicle line offset:  0.059376233559524705
+
+Inter-vehicle line offset:  0.05930405335617506
+
+Inter-vehicle line offset:  0.05727885547502587
+
+Inter-vehicle line offset:  0.05719977848988722
+
+Inter-vehicle line offset:  0.05719977848988722
+
+Inter-vehicle line offset:  0.04542121951480227
+
+Inter-vehicle line offset:  0.0550760356830855
+
+Inter-vehicle line offset:  0.05303538372969596
+
+Inter-vehicle line offset:  0.04904652430781575
+
+Inter-vehicle line offset:  0.033457524120236615
+
+Inter-vehicle line offset:  0.04894552659594109
+
+Inter-vehicle line offset:  0.04689067483897502
+
+Inter-vehicle line offset:  0.04483598470333883
+
+Inter-vehicle line offset:  0.04277586015000745
+
+Inter-vehicle line offset:  0.04277586015000745
+
+Inter-vehicle line offset:  0.042650751171879
+
+Inter-vehicle line offset:  0.03863747831388209
+
+Inter-vehicle line offset:  0.03850479504902271
+
+Inter-vehicle line offset:  0.03447893057946683
+
+Inter-vehicle line offset:  0.0441715316594502
+
+Inter-vehicle line offset:  0.03433011927546259
+
+Inter-vehicle line offset:  0.03223465599994535
+
+Inter-vehicle line offset:  0.03189878598564255
+
+Inter-vehicle line offset:  0.02977844786960615
+
+Inter-vehicle line offset:  -0.005219797003638282
+
+Inter-vehicle line offset:  0.019881829883113156
+
+Inter-vehicle line offset:  0.025515084119506426
+
+Inter-vehicle line offset:  0.02337127248599702
+
+Inter-vehicle line offset:  0.023143325328721653
+
+Inter-vehicle line offset:  -0.011804144066789979
+
+Inter-vehicle line offset:  0.02097038815904073
+
+Inter-vehicle line offset:  0.020721516391102424
+
+Inter-vehicle line offset:  0.01851351332145068
+
+Inter-vehicle line offset:  0.018577515293861868
+
+Inter-vehicle line offset:  0.018277128910260343
+
+Inter-vehicle line offset:  0.02019528482133659
+
+Inter-vehicle line offset:  0.016014269031788042
+
+Inter-vehicle line offset:  0.015657121983867595
+
+Inter-vehicle line offset:  0.020985179084917704
+
+Inter-vehicle line offset:  0.012928353552181915
+
+Inter-vehicle line offset:  0.012928353552181915
+
+Inter-vehicle line offset:  0.014379685505864548
+
+Inter-vehicle line offset:  0.02707127700907974
+
+Inter-vehicle line offset:  0.011365295170159717
+
+Inter-vehicle line offset:  0.010699296411334935
+
+Inter-vehicle line offset:  0.004952132410397936
+
+Inter-vehicle line offset:  0.02859591543705453
+
+Inter-vehicle line offset:  0.009130648990905987
+
+Inter-vehicle line offset:  0.005845980185889221
+
+Inter-vehicle line offset:  0.006563706806627434
+
+Inter-vehicle line offset:  0.03005297045998845
+
+Inter-vehicle line offset:  0.0033807184190852713
+
+Inter-vehicle line offset:  -0.01489006225398748
+
+Inter-vehicle line offset:  -0.0017972487970204787
+
+Inter-vehicle line offset:  -0.0022815232635096105
+
+Inter-vehicle line offset:  -0.0022815232635096105
+
+Inter-vehicle line offset:  -0.027980316159200158
+
+Inter-vehicle line offset:  -0.010035925957310177
+
+Inter-vehicle line offset:  -0.008654836565471946
+
+Inter-vehicle line offset:  -0.01794563773082325
+
+Inter-vehicle line offset:  -0.041523171866305386
+
+Inter-vehicle line offset:  -0.024323889880733418
+
+Inter-vehicle line offset:  -0.029458331561365125
+
+Inter-vehicle line offset:  -0.03990874970115532
+
+Inter-vehicle line offset:  -0.04550317325019193
+
+Inter-vehicle line offset:  -0.04181232060667295
+
+Inter-vehicle line offset:  -0.05411073993968207
+
+Inter-vehicle line offset:  -0.046152036109565975
+
+Inter-vehicle line offset:  -0.04066214414974734
+
+Inter-vehicle line offset:  -0.04231596323880937
+
+Inter-vehicle line offset:  -0.04085829087947557
+
+Inter-vehicle line offset:  -0.04085829087947557
+
+Inter-vehicle line offset:  -0.044250395295855505
+
+Inter-vehicle line offset:  -0.04191117719837101
+
+Inter-vehicle line offset:  -0.041839666336332515
+
+Inter-vehicle line offset:  -0.04402008047267114
+
+Inter-vehicle line offset:  -0.048505096129557335
+
+Inter-vehicle line offset:  -0.044851513530582476
+
+Inter-vehicle line offset:  -0.045173331443253195
+
+Inter-vehicle line offset:  -0.041088683370614776
+
+Inter-vehicle line offset:  -0.03755311922905391
+
+Inter-vehicle line offset:  -0.03755311922905391
+
+Inter-vehicle line offset:  -0.043458455383014294
+
+Inter-vehicle line offset:  -0.02915243089249764
+
+Inter-vehicle line offset:  -0.02406658570826037
+
+Inter-vehicle line offset:  -0.027703441214273594
+
+Inter-vehicle line offset:  -0.046253558434247166
+
+Inter-vehicle line offset:  -0.025497557232230905
+
+Inter-vehicle line offset:  -0.012533873741235935
+
+Inter-vehicle line offset:  -0.02406868083695013
+
+Inter-vehicle line offset:  -0.022829321009215753
+
+Inter-vehicle line offset:  -0.022829321009215753
+
+Inter-vehicle line offset:  -0.004663045004977162
+
+Inter-vehicle line offset:  -0.022784803565616407
+
+Inter-vehicle line offset:  -0.02204800844270871
+
+Inter-vehicle line offset:  -0.023792696143032255
+
+Inter-vehicle line offset:  0.0011731265868253349
+
+Inter-vehicle line offset:  -0.022853730554523555
+
+Inter-vehicle line offset:  -0.028044999288394767
+
+Inter-vehicle line offset:  -0.02381370528402449
+
+Inter-vehicle line offset:  0.012850878728494997
+
+Inter-vehicle line offset:  -0.023403371169337328
+
+Inter-vehicle line offset:  -0.03645499819605402
+
+Inter-vehicle line offset:  -0.024644950983990443
+
+Inter-vehicle line offset:  -0.020478498133695067
+
+Inter-vehicle line offset:  -0.024081001783979983
+
+Inter-vehicle line offset:  -0.04173081814465862
+
+Inter-vehicle line offset:  -0.024159107583561656
+
+Inter-vehicle line offset:  -0.012287355160454427
+
+Inter-vehicle line offset:  -0.023700628467899776
+
+Inter-vehicle line offset:  -0.02521912499038781
+
+Inter-vehicle line offset:  -0.02521912499038781
+
+Inter-vehicle line offset:  -0.007559046595075669
+
+Inter-vehicle line offset:  -0.024870819130139887
+
+Inter-vehicle line offset:  -0.024712051670215063
+
+Inter-vehicle line offset:  -0.0245623776533892
+
+Inter-vehicle line offset:  -0.00123246217146189
+
+Inter-vehicle line offset:  -0.024676681504796516
+
+Inter-vehicle line offset:  -0.028409872423895255
+
+Inter-vehicle line offset:  -0.026348030720623195
+
+Inter-vehicle line offset:  -0.02622200420675802
+
+Inter-vehicle line offset:  -0.02622200420675802
+
+Inter-vehicle line offset:  -0.037745453245173755
+
+Inter-vehicle line offset:  -0.02583418322122566
+
+Inter-vehicle line offset:  -0.02572949333343555
+
+Inter-vehicle line offset:  -0.02758229886815955
+
+Inter-vehicle line offset:  -0.045053730142507575
+
+Inter-vehicle line offset:  -0.0274925705548148
+
+Inter-vehicle line offset:  -0.019611660428147326
+
+Inter-vehicle line offset:  -0.02752169611894928
+
+Inter-vehicle line offset:  -0.02938145333800346
+
+Inter-vehicle line offset:  -0.02938145333800346
+
+Inter-vehicle line offset:  -0.015665331745842836
+
+Inter-vehicle line offset:  -0.031174132479105943
+
+Inter-vehicle line offset:  -0.031100969265498657
+
+Inter-vehicle line offset:  -0.03284287957808818
+
+Inter-vehicle line offset:  -0.0016661951812588782
+
+Inter-vehicle line offset:  -0.03277786328052912
+
+Inter-vehicle line offset:  -0.03660509898679343
+
+Inter-vehicle line offset:  -0.03265469964707224
+
+Inter-vehicle line offset:  -0.03276835416059787
+
+Inter-vehicle line offset:  -0.003531052994772299
+
+Inter-vehicle line offset:  -0.04438628185574145
+
+Inter-vehicle line offset:  -0.034600930739183244
+
+Inter-vehicle line offset:  -0.03454555293686301
+
+Inter-vehicle line offset:  -0.03644155523177295
+
+Inter-vehicle line offset:  -0.020818123435386582
+
+Inter-vehicle line offset:  -0.03638979128558928
+
+Inter-vehicle line offset:  -0.030377851082033835
+
+Inter-vehicle line offset:  -0.03812994832282213
+
+Inter-vehicle line offset:  -0.038084683823971455
+
+Inter-vehicle line offset:  -0.038191061702467
+
+Inter-vehicle line offset:  -0.02649105465972479
+
+Inter-vehicle line offset:  -0.034254369428224685
+
+Inter-vehicle line offset:  -0.024476029726209436
+
+Inter-vehicle line offset:  -0.012761091730295604
+
+Inter-vehicle line offset:  0.0008905105582974748
+
+Inter-vehicle line offset:  0.0008905105582974748
+
+Inter-vehicle line offset:  0.01453094395540555
+
+Inter-vehicle line offset:  0.02231461972400517
+
+Inter-vehicle line offset:  0.03203621961307679
+
+Inter-vehicle line offset:  0.039797388460789396
+
+Inter-vehicle line offset:  0.045638578791771245
+
+Inter-vehicle line offset:  0.045603742092084065
+
+Inter-vehicle line offset:  0.04945176487056657
+
+Inter-vehicle line offset:  0.0532942908804126
+
+Inter-vehicle line offset:  0.05518095081031382
+
+Inter-vehicle line offset:  0.05518095081031382
