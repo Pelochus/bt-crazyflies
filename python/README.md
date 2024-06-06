@@ -18,6 +18,11 @@ https://www.bitcraze.io/documentation/repository/crazyflie-lib-python/master/use
 Changing the URIs:
 https://www.bitcraze.io/documentation/repository/crazyflie-clients-python/master/userguides/userguide_client/#firmware-configuration
 
+### crazyflie_single_segment.py
+Based off the `crazyflie_demo.py`, it is pretty much the same but follows a segment indefinitely.
+Try it out before going into `crazyflie_segment_formation.py` to make sure it follows segment decently.
+It also shows the estimated position. 
+
 ### crazyflie_segment_formation.py
 Uses 2 Crazyflies in parallel running in parallel segments with GVF.
 Then, an algorithm coordinates them so that the move next to each other in their corresponding segment.
