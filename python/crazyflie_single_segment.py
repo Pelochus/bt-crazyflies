@@ -14,10 +14,10 @@ from cflib.positioning.motion_commander import MotionCommander
 from cflib.utils import uri_helper
 
 # Remember to change the URI accordingly (if needed)
-URI = uri_helper.uri_from_env(default='radio://0/80/2M/E7E7E7E701')
+URI = uri_helper.uri_from_env(default='radio://0/80/2M/E7E7E7E702')
 
 DEFAULT_HEIGHT = 0.5
-BOX_LIMIT = 0.5
+BOX_LIMIT = 1
 
 deck_attached_event = Event()
 
@@ -27,29 +27,23 @@ position_estimate = [0, 0]
 
 def move_box_limit(scf):
     with MotionCommander(scf, default_height=DEFAULT_HEIGHT) as mc:
-        body_x_cmd = 0.2
+        body_x_cmd = 0.15
         body_y_cmd = 0.0
-        max_vel = 0.2
+        max_vel = 0.3
 
         while (1):
-            '''
-            if position_estimate[0] > BOX_LIMIT:
-                mc.start_back()
-            elif position_estimate[0] < -BOX_LIMIT:
-                mc.start_forward()
-            '''
-
             if position_estimate[0] > BOX_LIMIT:
                 body_x_cmd = -max_vel
             elif position_estimate[0] < -BOX_LIMIT:
                 body_x_cmd = max_vel
+            '''
             if position_estimate[1] > BOX_LIMIT:
                 body_y_cmd = -max_vel
             elif position_estimate[1] < -BOX_LIMIT:
                 body_y_cmd = max_vel
+            '''
 
             mc.start_linear_motion(body_x_cmd, body_y_cmd, 0)
-
             time.sleep(0.1)
 
 def move_linear_simple(scf):
