@@ -16,19 +16,19 @@ def deactivate_led_bit_mask(scf):
     scf.cf.param.set_value('led.bitmask', 0)
 
 def light_check(scf):
-    activateBitMask(scf)
+    activate_led_bit_mask(scf)
     time.sleep(2)
-    deactivateBitMask(scf)
+    deactivate_led_bit_mask(scf)
     time.sleep(2)
 
 def take_off(scf):
-    commander= scf.cf.high_level_commander
+    commander = scf.cf.high_level_commander
 
     commander.takeoff(1.0, 2.0)
     time.sleep(3)
 
 def land(scf):
-    commander= scf.cf.high_level_commander
+    commander = scf.cf.high_level_commander
 
     commander.land(0.0, 2.0)
     time.sleep(2)
@@ -40,8 +40,8 @@ def hover_sequence(scf):
     land(scf)
 
 uris = {
-    'radio://0/20/2M/E7E7E7E701',
-    'radio://0/20/2M/E7E7E7E702',
+    'radio://0/80/2M/E7E7E7E701',
+    'radio://0/80/2M/E7E7E7E702',
 }
 
 if __name__ == '__main__':
@@ -50,7 +50,8 @@ if __name__ == '__main__':
 
     with Swarm(uris, factory=factory) as swarm:
         print('Connected to Crazyflies')
-        swarm.parallel_safe(lightCheck)
+        swarm.parallel_safe(light_check)
         swarm.reset_estimators()
 
-        swarm.sequential(hover_sequence)
+        # swarm.sequential(hover_sequence)
+        swarm.parallel_safe(hover_sequence)
