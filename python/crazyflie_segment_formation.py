@@ -22,6 +22,8 @@ uris = {
     'radio://0/80/2M/E7E7E7E702',
 }
 
+all_positions = {}
+
 DEFAULT_HEIGHT = 0.75
 SEGMENT_LIMIT = 1 # This way, it is easier to do the -1 to 1 segment.
 
@@ -33,24 +35,20 @@ def kuramoto():
     # TODO
     pass
 
-def my_position(radio, positions):
-    resultados = {}
-    positions = swarm.get_estimated_positions()
+def get_xy_from(radio, positions):
+    print(positions)
+    # return (positions[radio].x, positions[radio].y)
 
-    for radio in uris:
-        if radio == positions:
-            position = positions[radio]
-            resultados[radio] = {'x': position.x, 'y': position.y}
-            return resultados
-        else:
-            resultados[radio] = {'x': None, 'y': None}
-    return resultados
-
-def prueba(scf, positions):
-    position_estimate = my_position(scf._link_uri, positions)
-    print(position_estimate)
+def prueba(scf):
+    print("Hello, I am ", scf._link_uri)
+    print(all_positions)
+    for position in all_positions:
+        print(position)
+    # get_xy_from(scf._link_uri, positions)
+    # position_estimate = get_xy_from(scf._link_uri, positions)
+    # print(position_estimate)
     
-def move_segment_limit(scf, swarm):
+def move_segment_limit(scf):
     with MotionCommander(scf, default_height=DEFAULT_HEIGHT) as mc:
         body_x_cmd = 0.15
         body_y_cmd = 0.0
@@ -58,7 +56,7 @@ def move_segment_limit(scf, swarm):
 
         while (1):
             # First we calculate our positions
-            position_estimate = my_position(scf._link_uri, swarm)
+            position_estimate = get_xy_from(scf._link_uri, all_positions)
 
             if position_estimate[0] > SEGMENT_LIMIT:
                 body_x_cmd = -max_vel
@@ -76,6 +74,22 @@ def move_segment_limit(scf, swarm):
             mc.start_linear_motion(body_x_cmd, body_y_cmd, 0)
             time.sleep(0.1)
 
+# Horrible solution to pass the estimated positions of both drones to both drones
+# There is no other way I've found, since the wrapper only passes the positions
+# to its corresponding drone if it finds the URI as a key in the dictionary
+# and we need the positions of all drones for each drone
+# At least it should work for N drones
+def make_positions_dict(positions):
+    param = {}
+    for uri in uris:
+        param[uri] = positions
+
+    # For making sure it works
+    # for p in param.items():
+        # print(p)
+
+    return param
+
 if __name__ == '__main__':
     cflib.crtp.init_drivers()
     factory = CachedCfFactory(rw_cache='./cache')
@@ -92,6 +106,17 @@ if __name__ == '__main__':
             # sys.exit(1)
 
         swarm.reset_estimators()
-        # Need to fix, cant pass swarm nor swarm.get_positions to this function...
-        swarm.parallel_safe(prueba, swarm)
-        # swarm.parallel_safe(move_segment_limit, swarm.get_estimated_positions())
+        print("\nEstimators reset! These are the current positions\n")
+        print(swarm.get_estimated_positions())
+        
+        print("\nStarting formation in 1 second...\n")
+        time.sleep(1)
+
+        # Recover positions every frequency seconds
+        frequency = 0.5
+        while True:
+            # pos_dict = make_positions_dict(swarm.get_estimated_positions())
+            all_positions = swarm.get_estimated_positions()
+            swarm.parallel_safe(prueba)
+            # swarm.parallel_safe(move_segment_limit, swarm.get_estimated_positions())
+            time.sleep(frequency)
