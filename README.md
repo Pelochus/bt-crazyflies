@@ -26,5 +26,7 @@ Useful scripts for installing required packages, sources and dependencies for th
 1. [TODO](todo)
 
 ### Other
-- In the ```firmware``` folder there is a copy of the working firmwares for Crazyflie 2.1 and Crazyradio.
+- In the `firmware` folder there is a copy of the working firmwares for Crazyflie 2.1 and Crazyradio.
     - TODO add final Paparazzi firmware for this thesis
+- The `logs` folder has some logs and graphs corresponding to some experiments made for the thesis, shown in Chapter 4.
+You can ignore it, it's there as a backup

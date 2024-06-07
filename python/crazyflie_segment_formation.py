@@ -8,87 +8,98 @@
 
 import logging
 import time
-from threading import Event
-from collections import namedtuple # May be necessary, check
+import threading
 
 import cflib.crtp
 from cflib.crazyflie.swarm import CachedCfFactory
 from cflib.crazyflie.swarm import Swarm
 from cflib.positioning.motion_commander import MotionCommander
-from cflib.utils import uri_helper
 
 uris = {
     'radio://0/80/2M/E7E7E7E701',
     'radio://0/80/2M/E7E7E7E702',
 }
 
+# Only way to access positions easily is making this global (seriously)
 all_positions = {}
+# Similarly, we need the latest commanded speeds of all drones
+all_speeds = {}
 
 DEFAULT_HEIGHT = 0.75
-SEGMENT_LIMIT = 1 # This way, it is easier to do the -1 to 1 segment.
+SEGMENT_LIMIT = 1 # This way, it is easier to do the -1 to 1 segment, no need to normalize it
+FREQ = 0.25 # How many times we update the speed (and recover current positions) 
 
 # deck_attached_event = Event()
 logging.basicConfig(level=logging.ERROR)
 
-# Calculate the desired extra speed 
-def kuramoto():
-    # TODO
-    pass
+# Calculate the speed
+# NOTE: For now, this only works for only two drones!
+def kuramoto(my_position, other_positions):
+    # First of all, adjust parameters as needed
+    k = 1
+    desired_offset = 0
+
+    delta = 0
+    for position in other_positions:
+        delta += position[0] - my_position[0] - desired_offset
+    
+    return k * delta
 
 def get_xy_from(radio, positions):
-    print(positions)
-    # return (positions[radio].x, positions[radio].y)
-
-def prueba(scf):
-    print("Hello, I am ", scf._link_uri)
-    print(all_positions)
-    for position in all_positions:
-        print(position)
-    # get_xy_from(scf._link_uri, positions)
-    # position_estimate = get_xy_from(scf._link_uri, positions)
-    # print(position_estimate)
+    return (positions[radio].x, positions[radio].y)
     
-def move_segment_limit(scf):
+def coordinated_segment(scf):
     with MotionCommander(scf, default_height=DEFAULT_HEIGHT) as mc:
-        body_x_cmd = 0.15
-        body_y_cmd = 0.0
-        max_vel = 0.3
+        while True:
+            vnx = all_speeds[scf._link_uri][0]
+            vny = all_speeds[scf._link_uri][1] # Currently only 0
+            max_vel = 0.5
+            
+            # First we calculate positions
+            print(all_positions)
+            my_position = get_xy_from(scf._link_uri, all_positions)
 
-        while (1):
-            # First we calculate our positions
-            position_estimate = get_xy_from(scf._link_uri, all_positions)
+            # Made an array so it can scale in the future
+            other_positions = []
+            for uri in uris:
+                if uri != scf._link_uri:
+                    other_positions.append(get_xy_from(uri, all_positions))
 
-            if position_estimate[0] > SEGMENT_LIMIT:
-                body_x_cmd = -max_vel
-            elif position_estimate[0] < -SEGMENT_LIMIT:
-                body_x_cmd = max_vel
+            # Now we calculate the extra speed from Kuramoto
+            vf = vnx + kuramoto(my_position, other_positions)
+
+            # To limit speed
+            if (vf > max_vel):
+                vf = max_vel
+            elif (vf < -max_vel):
+                vf = -max_vel
+
+            if my_position[0] > SEGMENT_LIMIT:
+                vnx = -vf
+            elif my_position[0] < -SEGMENT_LIMIT:
+                vnx = vf
 
             '''
-            if position_estimate[1] > SEGMENT_LIMIT:
+            if my_position[1] > SEGMENT_LIMIT:
                 body_y_cmd = -max_vel
-            elif position_estimate[1] < -SEGMENT_LIMIT:
+            elif my_position[1] < -SEGMENT_LIMIT:
                 body_y_cmd = max_vel
             '''
 
+            all_speeds[scf._link_uri][0] = vnx
+            all_speeds[scf._link_uri][1] = vny
+
             # No yaw, that is why 0 at the end
-            mc.start_linear_motion(body_x_cmd, body_y_cmd, 0)
-            time.sleep(0.1)
+            mc.start_linear_motion(vnx, vny, 0)
+            # TODO Remove here or out
+            time.sleep(FREQ)
 
-# Horrible solution to pass the estimated positions of both drones to both drones
-# There is no other way I've found, since the wrapper only passes the positions
-# to its corresponding drone if it finds the URI as a key in the dictionary
-# and we need the positions of all drones for each drone
-# At least it should work for N drones
-def make_positions_dict(positions):
-    param = {}
-    for uri in uris:
-        param[uri] = positions
-
-    # For making sure it works
-    # for p in param.items():
-        # print(p)
-
-    return param
+def recover_positions():
+    # Recover positions every t seconds
+    global all_positions
+    while True:
+        all_positions = swarm.get_estimated_positions()
+        time.sleep(FREQ / 2) # Update 2 times faster than the speed, just in case
 
 if __name__ == '__main__':
     cflib.crtp.init_drivers()
@@ -96,27 +107,21 @@ if __name__ == '__main__':
 
     with Swarm(uris, factory=factory) as swarm:
         print('Connected to Crazyflies!')
-        
-        # I believe this is not needed, but will leave it as a reminder if things do not work
-        # Remember to add the function param_deck_flow back if needed (from crazyflie_demo.py)
-
-        # swarm.cf.param.add_update_callback(group='deck', name='bcFlow2', cb=param_deck_flow)
-        # if not deck_attached_event.wait(timeout=5):
-            # print('No flow deck detected!')
-            # sys.exit(1)
 
         swarm.reset_estimators()
         print("\nEstimators reset! These are the current positions\n")
         print(swarm.get_estimated_positions())
         
-        print("\nStarting formation in 1 second...\n")
-        time.sleep(1)
+        print("\nStarting formation in 3 seconds...\n")
+        time.sleep(3)
 
-        # Recover positions every frequency seconds
-        frequency = 0.5
-        while True:
-            # pos_dict = make_positions_dict(swarm.get_estimated_positions())
-            all_positions = swarm.get_estimated_positions()
-            swarm.parallel_safe(prueba)
-            # swarm.parallel_safe(move_segment_limit, swarm.get_estimated_positions())
-            time.sleep(frequency)
+        # Initialize speed dictionary
+        for uri in uris:
+            all_speeds[uri] = [0.25, 0] # x, y respectively
+
+        # Run threads
+        recover_positions_thread = threading.Thread(target=recover_positions)
+        recover_positions_thread.start()
+        time.sleep(0.01) # So that the previous thread has some time to update the variable the first time
+        swarm.parallel_safe(coordinated_segment)
+        recover_positions_thread.join()
