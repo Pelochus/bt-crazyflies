@@ -25,9 +25,7 @@ all_positions = {}
 # Similarly, we need the latest commanded speeds of all drones
 current_speed = {}
 
-NOMINAL_SPEED = {}
-DESIRED_X_SPEED = 0.33
-DESIRED_Y_SPEED = 0
+NOMINAL_SPEED = [0.33, 0] # x, y respectively
 DEFAULT_HEIGHT = 0.75
 SEGMENT_LIMIT = 1 # This way, it is easier to do the -1 to 1 segment, no need to normalize it
 FREQ = 0.2 # How many times we update the speed
@@ -39,7 +37,7 @@ logging.basicConfig(level=logging.ERROR)
 # NOTE: For now, this only works for only two drones!
 def kuramoto(my_position, other_positions):
     # First of all, adjust parameters as needed
-    k = 0.1
+    k = 0.15
     desired_offset = 0
 
     delta = 0
@@ -53,6 +51,7 @@ def get_xy_from(radio, positions):
     
 def coordinated_segment(scf):
     with MotionCommander(scf, default_height=DEFAULT_HEIGHT) as mc:
+        my_nominal_speed = NOMINAL_SPEED # Intialize nominal speed
         while True:
             # First we calculate positions
             my_position = get_xy_from(scf._link_uri, all_positions)
@@ -63,19 +62,18 @@ def coordinated_segment(scf):
                 if uri != scf._link_uri:
                     other_positions.append(get_xy_from(uri, all_positions))
 
-            global NOMINAL_SPEED
             # Change direction if passed the limit, also change direction of nominal speed
             if my_position[0] > SEGMENT_LIMIT:
-                NOMINAL_SPEED[scf._link_uri][0] *= -1
+                my_nominal_speed[0] *= -1
             elif my_position[0] < -SEGMENT_LIMIT:
-                NOMINAL_SPEED[scf._link_uri][0] *= -1
+                my_nominal_speed[0] *= -1
+
+            # TODO: Same for Y axis 
 
             # Get nominal (desired standard) speeds in x and y
-            vnx = NOMINAL_SPEED[scf._link_uri][0]
-            vny = NOMINAL_SPEED[scf._link_uri][1] # Currently 0
+            vnx = my_nominal_speed[0]
+            vny = my_nominal_speed[1] # Currently 0
             max_vel = 0.5
-
-            # TODO: Same for Y axis
 
             # Now we calculate the extra speed from Kuramoto, with the correct nominal speed
             vnx += kuramoto(my_position, other_positions)
@@ -99,7 +97,7 @@ def coordinated_segment(scf):
             time.sleep(FREQ)
 
 def recover_positions():
-    # Recover positions every t seconds
+    # Recover positions every FREQ seconds
     global all_positions
     while True:
         all_positions = swarm.get_estimated_positions()
@@ -122,7 +120,6 @@ if __name__ == '__main__':
         # Initialize all current and nominal speeds
         for uri in uris:
             current_speed[uri] = [0.25, 0] # x, y respectively
-            NOMINAL_SPEED[uri] = [DESIRED_X_SPEED, DESIRED_Y_SPEED] # x, y respectively
 
         # Run threads
         recover_positions_thread = threading.Thread(target=recover_positions)
