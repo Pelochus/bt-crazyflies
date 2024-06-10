@@ -23,11 +23,14 @@ uris = {
 # Only way to access positions easily is making this global (seriously)
 all_positions = {}
 # Similarly, we need the latest commanded speeds of all drones
-all_speeds = {}
+current_speed = {}
 
+NOMINAL_SPEED = {}
+DESIRED_X_SPEED = 0.33
+DESIRED_Y_SPEED = 0
 DEFAULT_HEIGHT = 0.75
 SEGMENT_LIMIT = 1 # This way, it is easier to do the -1 to 1 segment, no need to normalize it
-FREQ = 0.25 # How many times we update the speed (and recover current positions) 
+FREQ = 0.2 # How many times we update the speed
 
 # deck_attached_event = Event()
 logging.basicConfig(level=logging.ERROR)
@@ -36,7 +39,7 @@ logging.basicConfig(level=logging.ERROR)
 # NOTE: For now, this only works for only two drones!
 def kuramoto(my_position, other_positions):
     # First of all, adjust parameters as needed
-    k = 1
+    k = 0.1
     desired_offset = 0
 
     delta = 0
@@ -51,47 +54,48 @@ def get_xy_from(radio, positions):
 def coordinated_segment(scf):
     with MotionCommander(scf, default_height=DEFAULT_HEIGHT) as mc:
         while True:
-            vnx = all_speeds[scf._link_uri][0]
-            vny = all_speeds[scf._link_uri][1] # Currently only 0
-            max_vel = 0.5
-            
             # First we calculate positions
-            print(all_positions)
             my_position = get_xy_from(scf._link_uri, all_positions)
 
-            # Made an array so it can scale in the future
+            # Made it an array so it can scale in the future
             other_positions = []
             for uri in uris:
                 if uri != scf._link_uri:
                     other_positions.append(get_xy_from(uri, all_positions))
 
-            # Now we calculate the extra speed from Kuramoto
-            vf = vnx + kuramoto(my_position, other_positions)
+            global NOMINAL_SPEED
+            # Change direction if passed the limit, also change direction of nominal speed
+            if my_position[0] > SEGMENT_LIMIT:
+                NOMINAL_SPEED[scf._link_uri][0] *= -1
+            elif my_position[0] < -SEGMENT_LIMIT:
+                NOMINAL_SPEED[scf._link_uri][0] *= -1
 
-            # To limit speed
+            # Get nominal (desired standard) speeds in x and y
+            vnx = NOMINAL_SPEED[scf._link_uri][0]
+            vny = NOMINAL_SPEED[scf._link_uri][1] # Currently 0
+            max_vel = 0.5
+
+            # TODO: Same for Y axis
+
+            # Now we calculate the extra speed from Kuramoto, with the correct nominal speed
+            vnx += kuramoto(my_position, other_positions)
+
+            # Limit speed TODO: Is this necessary, anyway?
+            '''
             if (vf > max_vel):
                 vf = max_vel
             elif (vf < -max_vel):
                 vf = -max_vel
-
-            if my_position[0] > SEGMENT_LIMIT:
-                vnx = -vf
-            elif my_position[0] < -SEGMENT_LIMIT:
-                vnx = vf
-
-            '''
-            if my_position[1] > SEGMENT_LIMIT:
-                body_y_cmd = -max_vel
-            elif my_position[1] < -SEGMENT_LIMIT:
-                body_y_cmd = max_vel
             '''
 
-            all_speeds[scf._link_uri][0] = vnx
-            all_speeds[scf._link_uri][1] = vny
+            # Not needed, left just in case for future improvements
+            current_speed[scf._link_uri][0] = vnx
+            current_speed[scf._link_uri][1] = vny
+
+            print("I'm: ", scf._link_uri, " with X: ", my_position[0], " and with Vx: ", vnx)
 
             # No yaw, that is why 0 at the end
             mc.start_linear_motion(vnx, vny, 0)
-            # TODO Remove here or out
             time.sleep(FREQ)
 
 def recover_positions():
@@ -115,13 +119,16 @@ if __name__ == '__main__':
         print("\nStarting formation in 3 seconds...\n")
         time.sleep(3)
 
-        # Initialize speed dictionary
+        # Initialize all current and nominal speeds
         for uri in uris:
-            all_speeds[uri] = [0.25, 0] # x, y respectively
+            current_speed[uri] = [0.25, 0] # x, y respectively
+            NOMINAL_SPEED[uri] = [DESIRED_X_SPEED, DESIRED_Y_SPEED] # x, y respectively
 
         # Run threads
         recover_positions_thread = threading.Thread(target=recover_positions)
+        
         recover_positions_thread.start()
         time.sleep(0.01) # So that the previous thread has some time to update the variable the first time
         swarm.parallel_safe(coordinated_segment)
+        
         recover_positions_thread.join()
