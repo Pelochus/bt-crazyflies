@@ -23,10 +23,10 @@ uris = {
 # Only way to access positions easily is making this global (seriously)
 all_positions = {}
 
-NOMINAL_SPEED = [0.25, 0] # x, y respectively
+NOMINAL_SPEED = [0.2, 0] # x, y respectively
 DEFAULT_HEIGHT = 0.4 # In meters
 SEGMENT_LIMIT = 1 # This way, it is easier to do the -1 to 1 segment, no need to normalize it
-FREQ = 0.25 # How many times we update the speed
+FREQ = 0.2 # How many times we update the speed
 
 # deck_attached_event = Event()
 logging.basicConfig(level=logging.ERROR)
@@ -52,8 +52,8 @@ def coordinated_segment(scf):
         my_nominal_speed = {}
         my_nominal_speed[scf._link_uri] = NOMINAL_SPEED
 
-        # To make demos make sense
-        if scf._link_uri == 'radio://0/80/2M/E7E7E7E701':
+        # To make demos make sense, wait so that they do not start coordinated
+        if scf._link_uri == 'radio://0/80/2M/E7E7E7E702':
             time.sleep(3)
 
         while True:
@@ -74,20 +74,16 @@ def coordinated_segment(scf):
                 my_nominal_speed[scf._link_uri][0] = NOMINAL_SPEED[0]
                 print("I'm: ", scf._link_uri, " inside the elif")
 
-            # Reset X nominal speed
-            if (my_nominal_speed[scf._link_uri][0] > 0):
-                my_nominal_speed[scf._link_uri][0] = NOMINAL_SPEED[0]
-            else:
-                my_nominal_speed[scf._link_uri][0] = -NOMINAL_SPEED[0]
+            speed_x = my_nominal_speed[scf._link_uri][0]
+            speed_y = my_nominal_speed[scf._link_uri][1]
             
             # Add Kuramoto extra speed
-            # my_nominal_speed[scf._link_uri][0] += kuramoto(my_position, other_positions)
+            speed_x += kuramoto(my_position, other_positions)
 
-            print("I'm: ", scf._link_uri, " with X: ", my_position[0], \
-                  " and with speed: ", my_nominal_speed[scf._link_uri][0])
+            print("I'm: ", scf._link_uri, " with X: ", my_position[0], " and with speed: ", speed_x)
 
             # No yaw, that is why 0 at the end
-            mc.start_linear_motion(my_nominal_speed[scf._link_uri][0], my_nominal_speed[scf._link_uri][1], 0)
+            mc.start_linear_motion(speed_x, speed_y, 0)
             time.sleep(FREQ)
 
 def recover_positions():
@@ -115,7 +111,7 @@ if __name__ == '__main__':
         recover_positions_thread = threading.Thread(target=recover_positions)
         
         recover_positions_thread.start()
-        time.sleep(0.1) # So that the previous thread has some time to update the variable the first time
+        time.sleep(0.01) # So that the previous thread has some time to update the variable the first time
         swarm.parallel(coordinated_segment)
         
         recover_positions_thread.join()
