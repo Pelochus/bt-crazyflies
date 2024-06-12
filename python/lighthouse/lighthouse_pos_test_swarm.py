@@ -114,7 +114,9 @@ if __name__ == '__main__':
         recover_positions_thread = threading.Thread(target=recover_positions)
         
         recover_positions_thread.start()
-        time.sleep(0.01) # So that the previous thread has some time to update the variable the first time
-        swarm.parallel(coordinated_segment)
-        
+
+        while True:
+            print(all_positions)
+            time.sleep(1)
+            
         recover_positions_thread.join()
