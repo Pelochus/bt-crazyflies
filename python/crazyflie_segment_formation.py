@@ -25,7 +25,7 @@ all_positions = {}
 
 NOMINAL_SPEED = [0.2, 0] # x, y respectively
 DEFAULT_HEIGHT = 0.4 # In meters
-SEGMENT_LIMIT = 1 # This way, it is easier to do the -1 to 1 segment, no need to normalize it
+SEGMENT_LIMIT = 0.5
 FREQ = 0.2 # How many times we update the speed
 
 # deck_attached_event = Event()
@@ -35,7 +35,7 @@ logging.basicConfig(level=logging.ERROR)
 # NOTE: For now, this only works for only two drones!
 def kuramoto(my_position, other_positions):
     # First of all, adjust parameters as needed
-    k = 0.1
+    k = 0.12
     desired_offset = 0
 
     delta = 0

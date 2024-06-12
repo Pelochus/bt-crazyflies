@@ -14,10 +14,10 @@ from cflib.positioning.motion_commander import MotionCommander
 from cflib.utils import uri_helper
 
 # Remember to change the URI accordingly (if needed)
-URI = uri_helper.uri_from_env(default='radio://0/80/2M/E7E7E7E702')
+URI = uri_helper.uri_from_env(default='radio://0/80/2M/E7E7E7E701')
 
 DEFAULT_HEIGHT = 0.5
-BOX_LIMIT = 1
+BOX_LIMIT = 0.6
 
 deck_attached_event = Event()
 
