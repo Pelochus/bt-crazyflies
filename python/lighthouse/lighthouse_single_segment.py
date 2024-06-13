@@ -14,10 +14,10 @@ from cflib.positioning.motion_commander import MotionCommander
 from cflib.utils import uri_helper
 
 # Remember to change the URI accordingly (if needed)
-URI = uri_helper.uri_from_env(default='radio://0/80/2M/E7E7E7E701')
+URI = uri_helper.uri_from_env(default='radio://0/80/2M/E7E7E7E702')
 
-DEFAULT_HEIGHT = 0.5
-BOX_LIMIT = 0.6
+DEFAULT_HEIGHT = 0.4
+BOX_LIMIT = 0.35
 
 deck_attached_event = Event()
 
@@ -27,15 +27,17 @@ position_estimate = [0, 0]
 
 def move_box_limit(scf):
     with MotionCommander(scf, default_height=DEFAULT_HEIGHT) as mc:
-        body_x_cmd = 0.15
+        body_x_cmd = 0.1
         body_y_cmd = 0.0
-        max_vel = 0.3
+        max_vel = 0.2
 
         while (1):
             if position_estimate[0] > BOX_LIMIT:
                 body_x_cmd = -max_vel
+                print("if")
             elif position_estimate[0] < -BOX_LIMIT:
                 body_x_cmd = max_vel
+                print("elif")
             '''
             if position_estimate[1] > BOX_LIMIT:
                 body_y_cmd = -max_vel
@@ -67,25 +69,10 @@ def log_pos_callback(timestamp, data, logconf):
     position_estimate[0] = data['stateEstimate.x']
     position_estimate[1] = data['stateEstimate.y']
 
-def param_deck_flow(_, value_str):
-    value = int(value_str)
-    print(value)
-
-    if value:
-        deck_attached_event.set()
-        print('Deck is attached!')
-    else:
-        print('Deck is NOT attached!')
-
-
 if __name__ == '__main__':
     cflib.crtp.init_drivers()
 
     with SyncCrazyflie(URI, cf=Crazyflie(rw_cache='./cache')) as scf:
-
-        scf.cf.param.add_update_callback(group='deck', name='bcFlow2', cb=param_deck_flow)
-        time.sleep(1)
-
         logconf = LogConfig(name='Position', period_in_ms=10)
         logconf.add_variable('stateEstimate.x', 'float')
         logconf.add_variable('stateEstimate.y', 'float')
@@ -93,7 +80,9 @@ if __name__ == '__main__':
         logconf.data_received_cb.add_callback(log_pos_callback)
 
         logconf.start()
-        while True:
-            print(position_estimate)
-            time.sleep(1)
+
+        # take_off_simple(scf)
+        # move_linear_simple(scf)
+        move_box_limit(scf)
+
         logconf.stop()
