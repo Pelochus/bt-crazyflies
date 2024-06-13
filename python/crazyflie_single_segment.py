@@ -16,7 +16,7 @@ from cflib.utils import uri_helper
 # Remember to change the URI accordingly (if needed)
 URI = uri_helper.uri_from_env(default='radio://0/80/2M/E7E7E7E701')
 
-DEFAULT_HEIGHT = 0.33
+DEFAULT_HEIGHT = 0.5
 BOX_LIMIT = 0.5
 
 deck_attached_event = Event()
@@ -26,10 +26,11 @@ position_estimate = [0, 0]
 
 def move_box_limit(scf):
     with MotionCommander(scf, default_height=DEFAULT_HEIGHT) as mc:
-        body_x_cmd = 0.1
+        body_x_cmd = 0.25
         body_y_cmd = 0.0
-        max_vel = 0.2
+        max_vel = 0.25
 
+        t = 0
         while (1):
             if position_estimate[0] > BOX_LIMIT:
                 body_x_cmd = -max_vel
@@ -43,6 +44,9 @@ def move_box_limit(scf):
                 body_y_cmd = max_vel
             '''
 
+            # print("t\t", t, "X\t", position_estimate[0], "Sx\t", body_x_cmd)
+            # t += 0.1
+            
             mc.start_linear_motion(body_x_cmd, body_y_cmd, 0)
             time.sleep(0.1)
 
@@ -62,7 +66,6 @@ def take_off_simple(scf):
         mc.stop()
 
 def log_pos_callback(timestamp, data, logconf):
-    print(data)
     global position_estimate
     position_estimate[0] = data['stateEstimate.x']
     position_estimate[1] = data['stateEstimate.y']
