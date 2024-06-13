@@ -16,26 +16,26 @@ from cflib.utils import uri_helper
 # Remember to change the URI accordingly (if needed)
 URI = uri_helper.uri_from_env(default='radio://0/80/2M/E7E7E7E701')
 
-DEFAULT_HEIGHT = 0.5
-BOX_LIMIT = 0.6
+DEFAULT_HEIGHT = 0.33
+BOX_LIMIT = 0.5
 
 deck_attached_event = Event()
-
 logging.basicConfig(level=logging.ERROR)
 
 position_estimate = [0, 0]
 
 def move_box_limit(scf):
     with MotionCommander(scf, default_height=DEFAULT_HEIGHT) as mc:
-        body_x_cmd = 0.15
+        body_x_cmd = 0.1
         body_y_cmd = 0.0
-        max_vel = 0.3
+        max_vel = 0.2
 
         while (1):
             if position_estimate[0] > BOX_LIMIT:
                 body_x_cmd = -max_vel
             elif position_estimate[0] < -BOX_LIMIT:
                 body_x_cmd = max_vel
+                
             '''
             if position_estimate[1] > BOX_LIMIT:
                 body_y_cmd = -max_vel
