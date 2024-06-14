@@ -4,7 +4,6 @@
 # https://github.com/bitcraze/crazyflie-lib-python/blob/master/examples/step-by-step/sbs_motion_commander.py
 # New modifications inspired by:
 # crazyflie_swarm_demo.py
-# And my bachelor's thesis
 
 import logging
 import time
@@ -22,16 +21,13 @@ uris = {
 
 # Change which Crazyflie should wait
 waiting_uri = 'radio://0/80/2M/E7E7E7E702'
-
-# Only way to access positions easily is making this global (seriously)
 all_positions = {}
 
 NOMINAL_SPEED = [0.2, 0] # x, y respectively
 DEFAULT_HEIGHT = 0.5 # In meters
 SEGMENT_LIMIT = 1
-FREQ = 0.2 # How many times we update the speed
+FREQ = 0.2 # Seconds till we update the speed
 
-# deck_attached_event = Event()
 logging.basicConfig(level=logging.ERROR)
 
 # Calculate the speed
@@ -47,6 +43,7 @@ def kuramoto(my_position, other_positions):
     
     return k * delta
 
+# Get XY for the radio provided
 def get_xy_from(radio, positions):
     return (positions[radio].x, positions[radio].y)
     
