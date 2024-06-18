@@ -30,6 +30,13 @@ Then, an algorithm coordinates them so that the move next to each other in their
 More info (Spanish only) in the "Capítulo 4" of my bachelor's thesis:
 TODO PUT LINK
 
+### sim and lighthouse folders
+The first one contains a graphical experiment made for my thesis,
+with one log from a real drone and a simulated drone using the algorithm developed for this thesis.
+
+The lighthouse folder has modified files from this folder adapted for the Lighthouse Positioning System.
+It ended up in failures, so I advise against using it as is.
+
 ### Useful Links
 - https://github.com/bitcraze/crazyflie-lib-python/tree/master/examples
 - https://www.bitcraze.io/documentation/repository/crazyflie-lib-python/master/api/cflib/crazyflie/high_level_commander/
