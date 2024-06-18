@@ -15,8 +15,8 @@ max_iterations = 1
 positions = {}
 sim_speed = [0, 0]
 
-# Note: I've found that the real nominal speed of the real log is around 0.12 m/s, even though 0.25 was commanded.
-# At least that's why it is by it's estimated positions
+# Note: I've found that the real nominal speed of the real log is around 0.1 m/s, even though 0.25 was commanded.
+# At least that's what it is by its estimated positions
 NOMINAL_SPEED = [0.1, 0] # x, y respectively
 SEGMENT_LIMIT = 0.5
 FREQ = 0.2 # Seconds till we update the speed
@@ -27,7 +27,8 @@ FILE_PATH = "./log.txt"
 # NOTE: For now, this only works for only two drones!
 def kuramoto():
     # First of all, adjust parameters as needed
-    k = 0.24
+    # k is big since in this simulation there is a max of +-1 in delta, due to -0.5 to 0.5 segment
+    k = 0.3
     desired_offset = 0
     delta = 0
 
@@ -88,19 +89,28 @@ if __name__ == '__main__':
     positions['sim'] = [0, -0.5]
 
     fig, ax = plt.subplots()
+    
     ax.set_xlim(-1, 1)
     ax.set_ylim(-1, 1)
+    ax.set_title("Posiciones")
+    ax.grid(True)
 
-    # Horizontal line y = 0
-    ax.axhline(0, color='g', linestyle='--', linewidth=2)
+    # Horizontal line y = 0 (Black)
+    ax.axhline(0, color='k', linestyle='-', linewidth=2)
 
     # Vertical -1 and 1 lines
     ax.axvline(0.5, color='g', linestyle='--', linewidth=2)
     ax.axvline(-0.5, color='g', linestyle='--', linewidth=2)
 
+    # Segments
+    ax.plot([-0.5, 0.5], [0.5, 0.5], color='b', linestyle='-', linewidth=2)
+    ax.plot([-0.5, 0.5], [-0.5, -0.5], color='r', linestyle='-', linewidth=2)
+
+    speed_text = ax.text(0.05, 0.95, '', transform=ax.transAxes, va='top', fontsize=14, color='red')
+
     # Initialize positions
-    real_drone_position, = ax.plot([], [], 'bo')  # 'bo' is blue point
-    sim_drone_position, = ax.plot([], [], 'ro')  # 'ro' is red point
+    real_drone_position, = ax.plot([], [], 'bo', markersize=16, label="Dron Real")  # 'bo' is blue point
+    sim_drone_position, = ax.plot([], [], 'ro', markersize=16, label="Dron Simulado")  # 'ro' is red point
 
     def init():
         real_drone_position.set_data([], [])
@@ -112,7 +122,11 @@ if __name__ == '__main__':
         coordinated_segment() # Calculate positions
         real_drone_position.set_data(positions['real'][0], positions['real'][1])
         sim_drone_position.set_data(positions['sim'][0], positions['sim'][1])
-        return real_drone_position, sim_drone_position
+
+        speed_text.set_text(f'Velocidad (Simulado): {sim_speed[0]:.2f}') # Also show sim_speed drone
+
+        return real_drone_position, sim_drone_position, speed_text
 
     ani = FuncAnimation(fig, update, frames=np.arange(0, 100), init_func=init, blit=True, interval=(FREQ * 1000))
+    ax.legend(loc='upper left', bbox_to_anchor=(1, 1))
     plt.show()
