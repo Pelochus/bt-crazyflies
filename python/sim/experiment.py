@@ -62,7 +62,7 @@ def coordinated_segment():
         # Based on that speed, what would be the next position in FREQ seconds?
         positions['sim'][0] += sim_speed[0] * FREQ
 
-        print("Position: ", positions['sim'][0])
+        # print("Position difference: ", positions['real'][0] - positions['sim'][0])
         print("Speed: ", sim_speed[0])
 
 def get_number_from_line(file_path, line_number):
