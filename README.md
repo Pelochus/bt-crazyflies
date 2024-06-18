@@ -23,10 +23,10 @@ Useful scripts for installing required packages, sources and dependencies for th
 
 ### Code
 
-1. [TODO](todo)
+1. [Paparazzi, including GVF and Formation Control](https://github.com/Pelochus/paparazzi/tree/ec03feb68fccda4952f111c9f7663a54e2cbcce8)
+1. [Coordination with the official Bitcraze firmware for Crazyflies](https://github.com/Pelochus/bt-crazyflies/tree/main/python)
 
 ### Other
 - In the `firmware` folder there is a copy of the working firmwares for Crazyflie 2.1 and Crazyradio.
     - TODO add final Paparazzi firmware for this thesis
-- The `logs` folder has some logs and graphs corresponding to some experiments made for the thesis, shown in Chapter 4.
-You can ignore it, it's there as a backup
+- The `logs` folder has some logs and graphs corresponding to some experiments made for the thesis, shown in Chapter 4. You can ignore it, it's there as a backup
