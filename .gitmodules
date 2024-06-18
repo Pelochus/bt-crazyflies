@@ -1,0 +1,3 @@
+[submodule "paparazzi"]
+	path = paparazzi
+	url = https://github.com/Pelochus/paparazzi
