@@ -1,0 +1,238 @@
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+
+\usepackage{titlesec}
+% \usepackage{pailatino}
+
+\RequirePackage{verbatim}
+%\usepackage[chapter]{algorithm}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{afterpage}
+
+\usepackage{longtable}
+\usepackage{xspace}
+\usepackage{dcolumn}
+\usepackage{hyperref} % Referencia
+\usepackage{caption}
+\usepackage{dirtree}
+\usepackage[x11names]{xcolor} % https://osl.ugr.es/CTAN/macros/latex/contrib/xcolor/xcolor.pdf
+\usepackage{tikz}
+
+% Math packages
+\usepackage{mathtools}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{dsfont}
+
+%\usepackage{doxygen/doxygen}
+\usepackage{listings}
+
+\usepackage{float}
+\usepackage{pdfpages}
+\usepackage{url}
+\usepackage{colortbl, longtable}
+\usepackage[stable]{footmisc}
+\usepackage{index}
+
+% Important change, reverse margins because they are by default reversed
+% Right pages are aligned to the left (closer to the center of a book, which should be the other way around) and viceversa
+% Solution extracted from: https://stackoverflow.com/questions/2565755/latex-book-class-twosided-document-with-wrong-margins
+\let\tmp\oddsidemargin
+\let\oddsidemargin\evensidemargin
+\let\evensidemargin\tmp
+\reversemarginpar
+
+% ********************************************************************
+% Re-usable information
+% ********************************************************************
+
+% Useful: Write \myTitle\ something to add a space after the word
+\newcommand{\myTitle}{Control y coordinación de drones Crazyflie}
+\newcommand{\myTitleEnglish}{Control and coordination of Crazyflie drones}
+\newcommand{\myDegree}{Ingeniería Informática}
+\newcommand{\myName}{Ángel Hurtado Flores}
+\newcommand{\myProf}{Héctor García de Marina Peinado}
+\newcommand{\myOtherProf}{Jesús Bautista Villar}
+\newcommand{\myFaculty}{Escuela Técnica Superior de Ingenierías Informática y de Telecomunicación}
+\newcommand{\myFacultyShort}{E.T.S. de Ingenierías Informática y de Telecomunicación}
+\newcommand{\myDepartment}{Departamento de Ingeniería de Computadores, Automática y Robótica}
+\newcommand{\myDepartmentAlt}{Ingeniería de Computadores, Automática y Robótica}
+\newcommand{\myUni}{\protect{Universidad de Granada}}
+\newcommand{\myLocation}{Granada}
+
+% Redefinitions
+\renewcommand{\chaptermark}[1]{\markboth{\textbf{#1}}{}}
+\renewcommand{\sectionmark}[1]{\markright{\textbf{\thesection. #1}}}
+
+% New commands
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+\newcommand{\bigrule}{\titlerule[0.5mm]}
+
+% Color definitions
+\definecolor{BlueLink}{HTML}{0000FF}
+\definecolor{PurpleCite}{HTML}{800080}
+\definecolor{BackgroundCode}{gray}{0.12}
+\definecolor{Gray60}{gray}{.60}
+\definecolor{Gray40}{gray}{.40}
+\definecolor{Gray25}{gray}{.25}
+
+% Other settings
+% NOTE: Chapter Titles settings are in indice.tex
+
+% Change figure and table captions sizes and colors
+\DeclareCaptionFont{Gray40}{\color{Gray40}\hypersetup{linkcolor=gray}}
+\captionsetup[figure]{labelfont={small, bf, Gray40}, font={small, Gray40},}
+\captionsetup[table]{labelfont={small, bf, Gray40}, font={small, Gray40},}
+
+% Allow to show non cited references on the bib index
+\nocite{*}
+
+% Hyperref Settings
+\hypersetup {
+    pdfauthor = {\myName},
+    pdftitle = {\myTitle},
+    pdfsubject = {},
+    pdfkeywords = {Paparazzi UAV, robótica, firmware, drones, GVF},
+    pdfcreator = {LaTeX con pdfLatex},
+    pdfproducer = {pdfLatex},
+    colorlinks = true,
+    linkcolor = black,
+    citecolor = BlueLink,
+    urlcolor = PurpleCite,
+}
+
+% Code settings
+\definecolor{codegreen}{rgb}{0.3, 0.6, 0.3}
+\definecolor{codegray}{rgb}{0.5, 0.5, 0.5}
+\definecolor{codepurple}{rgb}{0.58, 0, 0.82}
+\definecolor{backgray}{rgb}{0.95, 0.95, 0.95}
+
+\lstset { 
+    frame=Ltb,
+    framerule=0.5pt,
+    aboveskip=0.5cm,
+    framextopmargin=3pt,
+    framexbottommargin=3pt,
+    framexleftmargin=0.1cm,
+    framesep=0pt,
+    rulesep=.4pt,
+    backgroundcolor=\color{gray97},
+    rulesepcolor=\color{black},
+    %
+    stringstyle=\ttfamily,
+    showstringspaces = false,
+    basicstyle=\scriptsize\ttfamily,
+    commentstyle=\color{gray45},
+    keywordstyle=\bfseries,
+    %
+    numbers=left,
+    numbersep=6pt,
+    numberstyle=\tiny,
+    numberfirstline = false,
+    breaklines=true,
+}
+ 
+% Minimizar fragmentado de listados
+\lstnewenvironment{listing}[1][]
+   {\lstset{#1}\pagebreak[0]}{\pagebreak[0]}
+
+\lstdefinestyle{CodigoC} {
+    language=C,
+    backgroundcolor=\color{backgray},
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\scriptsize\ttfamily\color{black},
+    breakatwhitespace=false,
+    breaklines=true,
+    captionpos=b,
+    keepspaces=true,
+    numbers=left,
+    numbersep=5pt,
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    tabsize=4,
+    frame=tb,
+    framerule=0pt,
+    framesep=0pt,
+}
+
+\lstdefinestyle{CodigoC++} {
+    language=C++,
+    basicstyle=\scriptsize\ttfamily,
+    frame=single,
+    backgroundcolor=\color{white},
+    numbers=left
+}
+
+\lstdefinestyle{CodigoPython}{
+    language=python,
+    backgroundcolor=\color{backgray},
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\scriptsize\ttfamily\color{black},
+    breakatwhitespace=false,
+    breaklines=true,
+    captionpos=b,
+    keepspaces=true,
+    numbers=left,
+    numbersep=5pt,
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    tabsize=2,
+    frame=tb,
+    framerule=0pt,
+    framesep=0pt,
+}
+
+\lstdefinestyle{CodigoBash}{
+    language=bash,
+    backgroundcolor=\color{backgray},
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\scriptsize\ttfamily\color{black},
+    breakatwhitespace=false,
+    breaklines=true,
+    captionpos=b,
+    keepspaces=true,
+    numbers=left,
+    numbersep=5pt,
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    tabsize=2,
+    frame=tb,
+    framerule=0pt,
+    framesep=0pt,
+}
+
+\lstdefinestyle{CodigoXML} {
+    language=XML,
+    backgroundcolor=\color{backgray},
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\scriptsize\ttfamily\color{black},
+    breakatwhitespace=false,
+    breaklines=true,
+    captionpos=b,
+    keepspaces=true,
+    numbers=left,
+    numbersep=5pt,
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    tabsize=4,
+    frame=tb,
+    framerule=0pt,
+    framesep=0pt,
+}

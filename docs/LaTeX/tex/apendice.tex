@@ -1,0 +1,320 @@
+\appendix
+
+\chapter{Instalación de Paparazzi en Debian}\label{appendix:debian_install}
+
+Paparazzi UAV solo se puede instalar oficialmente en Ubuntu \cite{paparazzi_center_install} sin realizar pasos complejos como compilación desde cero \cite{paparazzi_scratch_install}.
+
+Desde el equipo de Swarm Systems Lab preferimos el uso de Debian a Ubuntu y, debido a su similitud,
+el autor de este TFG ha descubierto un método para la instalación de Paparazzi en Debian 12, más detallado en el repositorio \cite{bt-crazyflies}.
+
+La instalación completa se basa en ejecutar el siguiente comando en Debian. Se recomienda ejecutar el script bajo el directorio donde se desee instalar Paparazzi:
+
+\begin{lstlisting}[style=CodigoBash]
+$ wget https://raw.githubusercontent.com/Pelochus/bt-crazyflies/main/scripts/debian/paparazzi-debian-install.sh && bash paparazzi-debian-install.sh
+\end{lstlisting}
+
+En las dos siguientes secciones se explica como se instaló en detalle Paparazzi en Debian.
+
+\section{Instalación de Paparazzi Center}
+
+Se ha creado el siguiente script de instalación en Bash para automatizar el proceso:
+
+\begin{lstlisting}[style=CodigoBash]
+#!/bin/bash
+
+# Needed to force a PPA repo in Debian
+sudo apt install -y build-essential devscripts
+
+# Important note: [trusted=yes] is not recommended
+echo "deb [trusted=yes] https://ppa.launchpadcontent.net/paparazzi-uav/ppa/ubuntu jammy main" | sudo tee -a /etc/apt/sources.list
+echo "deb-src [trusted=yes] https://ppa.launchpadcontent.net/paparazzi-uav/ppa/ubuntu jammy main" | sudo tee -a /etc/apt/sources.list
+
+# Rest of the official Paparazzi guide
+sudo apt update
+sudo apt install -y paparazzi-dev gcc-arm-none-eabi gdb-multiarch python-is-python3 paparazzi-jsbsim dfu-util
+
+# Clone Paparazzi
+git clone --origin upstream https://github.com/paparazzi/paparazzi.git
+cd paparazzi
+git checkout v6.3 # Currently last stable version
+
+# Compile latest stable
+make
+\end{lstlisting}
+
+Para entender este script, hay que hacer hincapié en las siguientes líneas:
+
+\begin{itemize}
+    \item \textbf{Líneas 11 y 12:} Añadimos los repositorios de descarga para Paparazzi. Para que funcionen en Debian, 
+    se añade \texttt{\textbf{[trusted=yes]}} de forma que se fuerce la confianza en el repositorio, ya que no es posible añadirlos de la forma natural según la guía. 
+    Se indica además, que se utilice los paquetes para la última version de Ubuntu que disponen desde el equipo de Paparazzi, en este caso, \texttt{\textbf{jammy}}.
+
+    \item \textbf{Línea 16:} Se instalan todos los paquetes según la guía oficial para Ubuntu, exceptuando el paquete para Paparazzi GCS, que no es posible utilizarlo en Debian
+\end{itemize}
+
+El resto de líneas son extraídas de la guía oficial de instalación.
+
+Este script debe funcionar en Debian 12 recién instalado si se posee conexión a la red. 
+Es posible, aunque no ha sido comprobado, que funcione en distribuciones basadas en Debian u otras versiones de Debian como Debian 11. 
+No se recomienda utilizar en distribuciones basadas en Ubuntu, se puede seguir la guía oficial en estos casos.
+
+\section{Instalación de Paparazzi GCS}
+Como se ha comentado en la sección previa, el paquete correspondiente a Paparazzi GCS no se puede instalar bajo Debian.
+Para ello, se puede utilizar el \textbf{AppImage} oficial, que funciona similar a un ejecutable en Windows o un contenedor de Docker.
+
+Este AppImage necesita ser integrado con el ejecutable de Paparazzi, ya que por defecto este asume que se ha instalado 
+el GCS desde el gestor de paquetes \texttt{apt} y, por tanto, hay acceso universal.
+
+En este caso, se utiliza este script para la configuración e integración de Paparazzi GCS en Debian:
+
+\begin{lstlisting}[style=CodigoBash]
+#!/bin/bash
+
+cd paparazzi
+
+# Make Paparazzi GCS AppImage Work
+echo "# Needed for Paparazzi AppImage to work" >> /home/$USER/.bashrc
+echo "export PAPARAZZI_HOME=$(pwd)" >> /home/$USER/.bashrc
+echo "export PAPARAZZI_SRC=$(pwd)" >> /home/$USER/.bashrc
+
+# Get AppImage and move to /usr/bin/pprzgcs so it can be launched by Paparazzi Center
+sudo apt install -y wget # Just in case, you should have it anyway
+sudo wget https://github.com/paparazzi/PprzGCS/releases/download/v1.0.11/pprzgcs-v1.0.11-x86_64.AppImage -O /usr/bin/pprzgcs
+sudo chmod 755 /usr/bin/pprzgcs
+\end{lstlisting}
+
+En este caso, es mucho más sencillo entender este script:
+
+\begin{itemize}
+    \item Primeramente se establecen las variables de entorno \texttt{PAPARAZZI\_HOME} y 
+    \texttt{PAPARAZZI\_SRC}, que son necesarias para el funcionamiento del AppImage.
+
+    \item Utilizando el ejecutable \texttt{wget}, descargamos automáticamente el AppImage y lo movemos a \texttt{/usr/bin/pprzgcs}, para que simule el comportamiento de descargar el paquete oficial de la repo. 
+\end{itemize}
+
+En general, la instalación de Paparazzi en Debian se condensa en ejecutar el primer script de este apéndice, 
+que se ocupa de llamar a los otros dos scripts, de forma que se pueda modularizar la instalación de ambos componentes
+
+\section{Instalación completa}
+
+Para la instalación completa del código fuente de Paparazzi, 
+se ejecuta el siguiente comando en el directorio raíz del repositorio:
+
+\begin{lstlisting}[style=CodigoBash]
+$ git submodule update --init --recursive .
+\end{lstlisting}
+
+Este paso no es necesario a no ser que se necesite compilar código o ejecutar simulaciones
+que necesiten de código o librerías externas. 
+No es necesario para el funcionamiento de Paparazzi Center y GCS.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Apendice B
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\chapter{Instalación de dependencias}\label{appendix:crazyflie_dependencies}
+
+En el \autoref{appendix:debian_install} se incluye como se adaptó e instaló Paparazzi para Debian, no obstante,
+no se incluye que librerías y configuraciones son necesarias para el uso de Crazyflie en Paparazzi.
+
+En este segundo apartado del apéndice se incluye una breve descripción de las librerías y configuraciones necesarias. 
+Se incluye aquí otro script de Bash que permite realizar todo esto de manera rápida:
+
+\begin{lstlisting}[style=CodigoBash]
+$ wget https://raw.githubusercontent.com/Pelochus/bt-crazyflies/main/scripts/deps/deps-install.sh && bash deps-install.sh
+\end{lstlisting}
+
+\section{Dependencias a instalar}
+Se necesitan las siguientes dependencias:
+
+\begin{itemize}
+    \item \textbf{dfu-util y dfu-programmer:} 
+    Paquetes de Ubuntu/Debian para cargar el firmware en el Crazyflie.
+
+    \item \textbf{cflib:}
+    Librería de Python para poder comunicarse con el Crazyradio 2.0 y, por tanto, un Crazyflie.
+
+    \item \textbf{gedit:}
+    Se usa por defecto para editar archivos en Paparazzi desde Paparazzi Center, al estar pensado para Ubuntu. 
+    Es opcional, pero es recomendable tenerlo instalado en Debian como opción \textit{fallback}.
+\end{itemize}
+
+\section{Configuraciones y ajustes}
+Por otro lado los ajustes necesarios son los siguientes:
+
+\begin{itemize}
+    \item \textbf{Añadir el usuario al grupo \texttt{dialout}:} 
+    Esto sirve para poder cargar el firmware en el Crazyflie sin permisos de superusuario. 
+
+    \item \textbf{Añadir permisos para el Crazyradio:}
+    Similarmente, se añaden permisos para poder acceder al Crazyradio por USB sin ser \textit{root}. 
+    Se sigue la guia oficial \cite{usb_permissions_crazyradio}.
+
+    \item \textbf{Cambiar el editor de texto por defecto de Paparazzi Center:}
+    De nuevo, opcional, pero se puede desde \textit{File - Edit settings - Text editor}
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Apendice C
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\chapter{Manual de usuario}\label{appendix:user_manual}
+
+Este manual de usuario se divide en dos partes: Paparazzi y coordinación con Bitcraze. 
+Se asume que ya se puede ejecutar Paparazzi para la primera parte. 
+Para la segunda, se asume que se tienen las librerías y aplicaciones de Bitcraze. 
+Se puede usar la máquina virtual provista por ellos.
+
+Si esto no es así aún, se recomienda leer los apéndices A y B o seguir las guías oficiales de instalación y configuración, 
+tanto de Paparazzi como de Bitcraze, según que se vaya a utilizar.  
+
+\section{Uso de Crazyflies en Paparazzi}
+
+Al usar el repositorio de GitHub del autor de este TFG \cite{bt-crazyflies}, 
+si se utiliza el submódulo de Paparazzi, el uso de los Crazyflies se ha simplificado
+respecto al explicado en el capítulo 2 y se han añadido los pasos pertinentes para el correcto funcionamiento. Los requisitos previos son:
+
+\begin{itemize}
+    \item Se solucionaron algunos errores en el firmware. Esto ya se ha integrado en la repo de Paparazzi oficial.
+    \item Se ha de cargar, previo a cargar el firmware de Paparazzi, el \textbf{firmware oficial de septiembre de 2019 (2019.09)}. 
+    Si esto no es asi, no habrá correcta comunicación con la radio, ya que el firmware de la radio no es modificado por Paparazzi y este entiende a versiones antiguas.
+    \item Se recomienda añadir el Flow Deck V2 mencionado en el capítulo 3, \autoref{fig:flow-deck}. Sin este, los resultados reales serán pésimos.
+    \item Por último, se han añadido diversos archivos de configuración XML para facilitar un poco más el uso en Paparazzi
+\end{itemize}
+
+Para el uso de un Crazyflie, se tienen los siguientes nuevos pasos respecto al capítulo 2. Se recomienda leer el capítulo 2 para las correspondientes figuras.
+
+\begin{itemize}
+    \item En el menú desplegable arriba a la derecha, seleccionar \texttt{conf\_crazyflies.xml}
+    \item En el superior izquierda, seleccionar \texttt{crazyflie-2.1} para usar el Crazyflie 2.1. 
+    Se tiene soporte experimental para Crazyflie 2.0 añadido por el autor de este TFG, pero no es plenamente funcional.
+    \item Para simulación, los Crazyflie no funcionan (fallo de Paparazzi), así que se recomienda seleccionar \texttt{gvf-bebop2-x},
+    que tiene el mismo funcionamiento que el Crazyflie (mismos flightplan, telemetría...) pero funciona correctamente en simulación.
+    \item En los dos pasos previos, por como se ha diseñado los XML, no se necesita seleccionar otros XMLs. 
+    Los flightplan, airframe files, telemetry files y demás configuraciones son las correctas si no se modifican, incluyen calibraciones como las del PID.
+    \item En base a si se desea simulación o real, usar uno de los dos previos y compilar \texttt{nps} para simulación o \texttt{ap} para cargar posteriormente al Crazyflie, como en el capítulo 2.
+    \item Por último, dirigirse a la pestaña de \texttt{Operation} y lanzar una sesión de \texttt{Simulation} o \texttt{Crazyflie Flight} según cual se desee usar. Con esto, si se cumplen todos los pasos previos y apéndices pertinentes, debería poderse utilizar el GCS para GVF.
+\end{itemize}
+
+Finalmente, para coordinación, hay que usar los scripts que se encuentran en
+\texttt{sw/ground\_segment/python/gvf} según se desee formaciones circulares o segmentos paralelos. 
+Se recomienda \textbf{SÓLO USAR} para simulación, ya que la implementación real no da buenos resultados. 
+
+La ejecución ha de realizarse tras mandar los comandos de GVF a los drones. Una vez estos esten siguiendo una trayectoria, ejecutar el script correspondiente.
+Ambos scripts tienen sus menús de ayuda correspondientes para entender mejor como se ejecutan.
+También se recomienda ver los ejemplos provistos en la sección 4.3 si los menús de ayuda no son suficientes.
+
+\section{Coordinación de Crazyflies bajo firmware oficial}
+
+Para empezar, se recomienda cargar el último firmware oficial de Bitcraze para utilizar sus herramientas \cite{crazyflie_firmware_upgrade}. 
+Además, para el uso como swarm, es necesario asignar una URI distinta a cada Crazyflie mediante la configuración de este en Crazyflie Client. 
+Como último requisito, se requiere el Flow Deck v2 y la Crazyradio, 
+el primero para correcto movimiento y el segundo para la conexión.
+
+Con esta base, y asumiendo la disponibilidad de las dependencias necesarias 
+(estarán todas disponibles si se parte desde Bitcraze VM), 
+se pueden utilizar los programas en la carpeta \texttt{python} del repositorio de este TFG \cite{bt-crazyflies}.
+Alternativamente, se pueden ver los ejemplos oficiales de Bitcraze \cite{cflib-examples}
+
+La ejecución de todos los programas que se mencionarán ahora será de la siguiente forma:
+
+\begin{lstlisting}[style=CodigoBash]
+$ python example.py
+\end{lstlisting}
+
+\subsection{Demo}
+
+El archivo es \texttt{crazyflie\_demo.py}
+
+Se recomienda utilizar este primer programa para asegurar el correcto funcionamiento de cada Crazyflie por separado. 
+Tan sólo se debe modificar la URI del programa para que coincida con la del Crazyflie que se vaya a usar.
+
+El programa consiste en:
+
+\begin{itemize}
+    \item Despegar el Crazyflie a 0.5 metros
+    \item Moverse 0.5 metros hacia delante
+    \item Volver 0.5 metros hacia atrás, tras girar 180 grados
+    \item Aterrizar
+\end{itemize}
+
+\subsection{Demo para varios Crazyflies}
+
+El archivo es \texttt{crazyflie\_swarm\_demo.py}
+
+Similarmente al caso anterior, esto prueba que el funcionamiento en enjambre funciona.
+Se debe modificar las URIs deseadas con los Crazyflies que vayan a participar.
+
+El programa consiste en:
+
+\begin{itemize}
+    \item Parpadear los LEDs de ambos Crazyflie para asegurar que funcionan coordinadamente
+    \item Despegar ambos Crazyflie a 1 metro
+    \item Esperar 3 segundos
+    \item Aterrizar
+\end{itemize}
+
+\subsection{Segmento para un solo Crazyflie}
+
+El archivo es \texttt{crazyflie\_single\_segment.py}
+
+Este programa tiene como objetivo hacer el funcionamiento de la coordinación en segmentos
+pero para un solo dron, de forma que se pueda verificar que los drones se mueven correctamente a lo largo de un segmento.
+
+Este programa consiste en:
+
+\begin{itemize}
+    \item Despegar el Crazyflie a 0.5 metros sobre el (0, 0)
+    \item Moverse hasta (0.5, 0), volver hacia atras hasta la posición estimada (-0.5, 0). Las unidades son metros. Esto se hará en bucle infinito.
+    \item El aterrizaje se hará tras comandar \texttt{Ctrl+C} al programa
+\end{itemize}
+
+\subsection{Coordinación en segmentos paralelos para dos Crazyflies}
+
+El archivo es \texttt{crazyflie\_segment\_formation.py}
+
+Este programa tiene como objetivo hacer el funcionamiento de la coordinación en segmentos que tiene este TFG como objetivo.
+Se puede ampliar para funcionar con más de dos drones, pero requiere varias modificaciones. 
+
+Este programa consiste en:
+
+\begin{itemize}
+    \item Despegar ambos Crazyflie a 0.5 metros sobre el (0, 0). 
+    Cada Crazyflie en este caso, tendrán un (0, 0) distinto, se recomienda poner uno al lado del otro, separados aproximadamente medio metro.
+    \item Moverse hasta (1, 0), volver hacia atras hasta la posición estimada (-1, 0). 
+    Las unidades son metros. Esto se hará en bucle infinito.
+    \item Mientras esto se hace, ambos Crazyflie tratarán de mantenerse uno al lado del otro.
+    Por defecto, el script hará a uno de los 2 Crazyflies esperar a que el otro avance, de esta forma, tiene más sentido la coordinación. 
+    Se deberá cambiar la variable \texttt{waiting\_uri} para elegir cual esperará.
+    \item El aterrizaje se hará tras comandar \texttt{Ctrl+C} al programa
+\end{itemize}
+
+Si este programa funciona correctamente, deberán obtenerse resultados similares a los de este TFG.
+
+\subsection{Coordinación en segmentos paralelos simulada}
+
+El archivo es \texttt{sim/experiment.py}
+
+Este programa tiene como objetivo hacer el funcionamiento de la coordinación en segmentos 
+que tiene este TFG como objetivo, pero simulando uno de los dos drones.
+Dado que este programa es un breve experimento, 
+no esta pensado para ser usado sin previas modificaciones, añadidos o trabajos manuales.
+
+Para usar este programa, se recomienda previamente tener un log similar al provisto en \texttt{sim/log.txt},
+es decir, una sola columna con números que son las posiciones del dron real.
+Alternativamente, para probar el funcionamiento se recomienda probar con el archivo provisto de ejemplo.
+Se adjunta un script para convertir las comas a puntos si fuese necesario.
+
+Para conseguir un log así se puede utilizar el programa para un solo segmento del Crazyflie explicado en este apéndice y extraer la columna de posiciones.

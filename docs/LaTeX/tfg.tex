@@ -1,0 +1,61 @@
+\documentclass[a4paper, twoside, 12pt]{book}
+
+% Incluir ajustes globales
+\usepackage{settings}
+
+\decimalpoint
+\newcolumntype{.}{D{.}{\esperiod}{-1}}
+
+\makeatletter
+\addto\shorthandsspanish{\let\esperiod\es@period@code}
+\makeatother
+\makeindex
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LO]{\leftmark}
+\fancyhead[RE]{\rightmark}
+\fancyhead[RO,LE]{\textbf{\thepage}}
+
+\setlength{\headheight}{1.5\headheight}
+
+% Para conseguir que en las páginas en blanco no ponga cabeceras
+\makeatletter
+\def\clearpage{%
+  \ifvmode
+    \ifnum \@dbltopnum =\m@ne
+      \ifdim \pagetotal <\topskip
+        \hbox{}
+      \fi
+    \fi
+  \fi
+  \newpage
+  \thispagestyle{empty}
+  \write\m@ne{}
+  \vbox{}
+  \penalty -\@Mi
+}
+
+\makeatother
+
+\begin{document}
+
+    \input{tex/portada}
+    \input{tex/prefacio}
+    \input{tex/indice}
+    
+    \setlength{\parskip}{1.25mm}
+    
+    \input{tex/chapters/01-Introduccion}
+    \input{tex/chapters/02-Preliminares}
+    \input{tex/chapters/03-Control-de-un-Crazyflie}
+    \input{tex/chapters/04-Coordinacion-con-Crazyflies}
+    \input{tex/chapters/05-Conclusiones}
+
+    \input{tex/apendice}
+
+    \bibliography{bib/bibliografia}
+    \bibliographystyle{ieeetr}
+    \addcontentsline{toc}{chapter}{Bibliografia}
+
+\end{document}

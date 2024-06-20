@@ -1,0 +1,22 @@
+% \renewcommand{\indexname}{Índice alfabético}
+\renewcommand{\listtablename}{Índice de tablas} % Change from Indice de cuadros to Indice de tablas
+\renewcommand\spanishtablename{Tabla} % Same but with the captions
+
+% This is here since I only want it to be applied after previous "chapters" are already written
+\titleformat{\chapter} % command 
+[display] % shape
+{\scshape\Huge} % format
+{\textbf{Capítulo \thechapter}} % label
+{1mm} % sep
+{
+    \LARGE
+    \vspace{-1mm}
+}
+[
+    \vspace{-5mm}%
+    \rule{\textwidth}{0.5mm}
+]
+
+\tableofcontents
+\listoffigures
+\listoftables
