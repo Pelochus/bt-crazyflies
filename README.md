@@ -1,4 +1,4 @@
-## Control & Coordination of Crazyflie drones | Bachelor's Thesis
+# Control & Coordination of Crazyflie drones | Bachelor's Thesis
 Control and Coordination of Crazyflie drones using Paparazzi UAV project. This is my bachelor's thesis.
 
 The ultimate goal of this work is to achieve coordination among Crazyflies, 
